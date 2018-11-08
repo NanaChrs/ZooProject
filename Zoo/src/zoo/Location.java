@@ -14,7 +14,6 @@ import java.util.ArrayList;
 public class Location {
         //attributes
     Position position; //corresponds to Location Enum
-//    String surface; //is this necessary?
     boolean broken; //0 = false, 1 = true
     ArrayList<Animal> animals = new ArrayList<Animal>();
     
@@ -26,7 +25,28 @@ public class Location {
 */    
     // constructor
     public Location(Position p){
-        position = p;
+        position= p;
         broken = false; 
     }
+    
+    public boolean isSomeoneSick(){
+        for (Animal animal : animals){
+            if (animal.malade){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean isSomeoneAngry(){
+        for (Animal animal : animals){
+            if (animal.faim){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    
+    
 }

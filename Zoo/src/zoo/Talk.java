@@ -9,6 +9,7 @@ package zoo;
  *
  * @author mathi
  */
-public enum Position {
-    Caisse, Oiseaux, Lions, Serpents, Pandas, Elephants, Zebras, Aquarium, Girafes, Singes, Suricates, Sortie, Toilettes, Restaurant
+public interface Talk {
+    //public void manger();
+    public void talk(String sentence);
 }

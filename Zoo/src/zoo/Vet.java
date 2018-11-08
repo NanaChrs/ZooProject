@@ -9,35 +9,36 @@ package zoo;
  *
  * @author mathi
  */
-public class Vet extends People implements Organism{
-    Animal animal;
-
-    public Vet(Animal animal, String name) {
-        super(name);
-        this.animal = animal;
-    }
-    
-    
+public class Vet extends People implements Talk, Interactions{
+    Location lieu;  
     
     public String introduceSelf(){
-        return "Je suis le vétérinaire. Je m'occupe de "+this.animal.name;
+        return "Je suis le vétérinaire. Je m'occupe de des animaux du zoo";
+    }
+    
+
+    public void soingerNourrir (){
+        int i=0;
+        int j=0;
+        for (Animal animal: this.lieu.animals){
+            if (animal.malade){
+                animal.malade=false;
+                this.talk("J'ai soigné le"+animal.getClass());
+                i++;
+            }
+            if (animal.faim){
+                animal.faim=false;
+                this.talk("J'ai donné à manger au"+animal.getClass());
+            }
+        }
+        if (i==0 && j==0){
+            this.talk("AH! On dirait bien qu'on a pas besoin de moi ici. Je me ferais bien une petite pause moi...");
+        }
     }
     
     @Override
-    public String interact (Location lieu){
-        if (this.animal.malade){
-            this.soigner();
-        }
-        if (this.animal.faim){
-            this.nourrir();
-        }
+    public void move(Location lieu){
+        this.lieu=lieu;
     }
     
-    public String soigner (){
-        
-    }
-    
-    public String nourrir (){
-        
-    }
 }

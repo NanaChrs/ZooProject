@@ -24,7 +24,7 @@ public class Lion extends Animal {
         System.out.println("Roar!");
     }
     @Override
-    public String interact(Location lieu){
+    public String interact(){
         if(faim == true){
             return "Ohh la! Le lion a faim et il essaie de manger des gens!";
             

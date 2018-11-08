@@ -10,22 +10,37 @@ package zoo;
  * @author mathi
  */
 public class Cashier extends Employee{
-    public Cashier(String name) {
-        super(name);
-        talk(introduceSelf());
-    }
 
     public Cashier(int heureDeb, int heureFin, String name) {
         super(heureDeb, heureFin, name);
+        this.lieu.position=Position.Caisse;
         talk(introduceSelf());
     }
     
     public String introduceSelf(){
-        return "Bonjour ! Je m'appelle "+this.name+". Voulez-vous acheter un ticket ? Pour se faire je dois savoir votre prénom, votre âge et si vous êtes étudiant ou non";
+        return "Bonjour ! Voulez-vous acheter un ticket ? Pour se faire je dois savoir votre prénom, votre âge et si vous êtes étudiant ou non";
     }
 
+   
+    
     @Override
-    public String interact(Location lieu) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void talk(String string){
+        System.out.println(this.getClass()+": "+ string);
     }
+    
+    public int prix(Client client){
+        if (client.getAge()<=18 || client.isStudent()==true){
+            return 10;
+        }
+        else{
+            return 20;
+        }
+    }
+    
+    public int calculerPrix(int Montant){
+        
+    }
+    
+    
+    
 }

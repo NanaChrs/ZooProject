@@ -9,13 +9,12 @@ package zoo;
  *
  * @author mathi
  */
-public abstract class Animal implements Organism {
+public abstract class Animal implements Talk {
     boolean faim;   //implement in subclass to get name of class 
     boolean soif;    
     boolean malade;  //vet has a method that can make animal well again
     boolean dormir;   
     boolean jouer;
-    String name;
     
     protected boolean getFaim(){
         return faim;
