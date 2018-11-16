@@ -9,26 +9,25 @@ package zoo;
  *
  * @author mathi
  */
-public abstract class People implements Organism {
-    protected String name;
-    
+public abstract class People implements Talk {
+    public Location lieu;
 
-    public People(String name) {
-        this.name = name;
-        
+    public People(Location lieu) {
+        this.lieu=lieu;
     }
     
-    public String getNom() {
-        return name;
-    }
-
-    public void setNom(String nom) {
-        this.name = nom;
-    }
     
     @Override
     public void talk(String say){
-        System.out.println(this.name+": "+say+".");
+        System.out.println(this.getClass()+": "+say);
+    }
+
+    public Location getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(Location lieu) {
+        this.lieu = lieu;
     }
     
     public abstract String introduceSelf();

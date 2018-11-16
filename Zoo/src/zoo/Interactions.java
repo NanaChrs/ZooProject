@@ -9,8 +9,6 @@ package zoo;
  *
  * @author mathi
  */
-public interface Organism {
-    //public void mange();
-    public void talk(String sentence);
-    public String interact(Location lieu);
+public interface Interactions {
+    public void move(Location lieu);
 }
