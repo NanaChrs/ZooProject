@@ -10,7 +10,10 @@ package zoo;
  * @author mathi
  */
 public class Vet extends People implements Talk, Interactions{
-    Location lieu;  
+
+    public Vet(Location lieu) {
+        super(lieu);
+    }
     
     public String introduceSelf(){
         return "Je suis le vétérinaire. Je m'occupe de des animaux du zoo";

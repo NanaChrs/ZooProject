@@ -11,9 +11,13 @@ package zoo;
  */
 public class Cashier extends Employee{
 
-    public Cashier(int heureDeb, int heureFin, String name) {
-        super(heureDeb, heureFin, name);
-        this.lieu.position=Position.Caisse;
+    public Cashier(int heureDeb, int heureFin, Location lieu) {
+        super(heureDeb, heureFin, lieu);
+        talk(introduceSelf());
+    }
+    
+    public Cashier(Location lieu){
+        super(lieu);
         talk(introduceSelf());
     }
     
@@ -37,9 +41,6 @@ public class Cashier extends Employee{
         }
     }
     
-    public int calculerPrix(int Montant){
-        
-    }
     
     
     

@@ -10,8 +10,12 @@ package zoo;
  * @author mathi
  */
 public abstract class People implements Talk {
-    Location lieu;
-         
+    public Location lieu;
+
+    public People(Location lieu) {
+        this.lieu=lieu;
+    }
+    
     
     @Override
     public void talk(String say){

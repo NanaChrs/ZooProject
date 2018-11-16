@@ -13,9 +13,17 @@ import java.util.ArrayList;
  */
 public class Location {
         //attributes
-    Position position; //corresponds to Location Enum
-    boolean broken; //0 = false, 1 = true
-    ArrayList<Animal> animals = new ArrayList<Animal>();
+    public Position position; //corresponds to Location Enum
+    protected boolean broken; //0 = false, 1 = true
+    protected ArrayList<Animal> animals = new ArrayList<Animal>();
+
+    public Location(Position position, boolean broken) {
+        this.position = position;
+        this.broken = broken;
+    }
+    
+    
+    
     
     //default constructor
  /*   public Location(){

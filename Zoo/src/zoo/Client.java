@@ -5,6 +5,9 @@
  */
 package zoo;
 
+import java.util.ArrayList;
+import java.util.Scanner;
+
 /**
  *
  * @author mathi
@@ -13,13 +16,20 @@ public class Client extends People implements Talk, Interactions{
     boolean student;
     private int age;
     String name;
-    
 
-    public Client(boolean student, int age, String name) {
+    public Location getLieu() {
+        return lieu;
+    }
+
+    public void setLieu(Location lieu) {
+        this.lieu = lieu;
+    }
+
+    public Client(boolean student, int age, String name, Location pos) {
+        super(pos);
         this.name=name;
         this.student = student;
         this.age = age;
-        this.lieu.position=Position.Caisse;
         talk(introduceSelf());
     }
 
@@ -53,7 +63,13 @@ public class Client extends People implements Talk, Interactions{
     
     @Override
     public void talk(String say){
-        System.out.println(this.getName()+": "+say);
+        if(this.age>3){
+            System.out.println(this.getName()+": "+say);
+        }
+        else{
+            System.out.println(this.getName()+": Gaga! ");
+        }
+        
     }
     
     
@@ -72,9 +88,15 @@ public class Client extends People implements Talk, Interactions{
     }
 
     public void takeSelfie(){
-        talk("Et si on prenait un selfie avec le*a*s "+this.lieu.animals.get(0).getClass());
-        System.out.println("*clicks*");
-        talk("Wow mangifaïque ma chérie");
+        if (this.age<40){
+            talk("Et si on prenait un selfie avec le*a*s "+this.lieu.animals.get(0).getClass());
+            System.out.println("*clicks*");
+            talk("Wow mangifaïque ma chérie");
+        }
+        else{
+            talk("Mais pourquoi l'appareil photo me prend moi et pas les animaux !! JACQUELINE AIDE MOI STP J'Y COMPRENDS RIEN MOI!");
+        }
+        
     }
     
     public void manger(){
@@ -88,6 +110,7 @@ public class Client extends People implements Talk, Interactions{
     }
     
     public void observer(){
+        //System.out.println("là");
         if (this.lieu.position==Position.Aquarium){
             talk("Woooooow !!! L'aquarium est tellement grand ! Regarde ces vitres et ces poissons !!");
         }
@@ -118,7 +141,17 @@ public class Client extends People implements Talk, Interactions{
         else if (this.lieu.position==Position.Zebras){
             talk("Wow on dirait de gros poneys noirs et blancs");
         }
-        this.lieu.animals.get(0).talk("");
+        else if(this.lieu.position==Position.Restaurant){
+            manger();
+        }
+        else if (this.lieu.position==Position.Toilettes){
+            talk("Je dois trop faire pipiiii !!!");
+        }
+        else if (this.lieu.position==Position.Sortie){
+            talk("Oh mince on est déjà arrivés à la sortie ?!");
+        }
+        
+        
     }
     
     public boolean interact(){
@@ -130,13 +163,80 @@ public class Client extends People implements Talk, Interactions{
             talk("Oh lala !! On dirait qu'un des animaux a faim... J'espère qu'il ne va pas nous manger !!");
             return true;
         }
-        else if (this.age<=10){
+        else if (this.age<=10 && !this.lieu.animals.isEmpty()){
             if (this.lieu.position!=Position.Aquarium)
                 talk("Héhé je vais embêter le*a*s "+this.lieu.animals.get(0).getClass()+" et lui jeter des bonbons à la figure");
                 this.lieu.animals.get(0).talk("");
                 talk("Oh j'ai eu peur je ne referais plus ça !!!");
-                return true;
+            return true;
         }
         return false;
+        
+    }
+    
+    public void printAndGetChoices(String choix, ArrayList<Location> lieu){
+            String choixBis=choix.toUpperCase();
+            boolean youGotHere=false;
+            //System.out.println(choixBis);
+            if (choixBis.equals("") || choixBis.equals("C") || choixBis.equals("M")){
+                System.out.println("You're at "+this.lieu.position+". What do you want to do now "+this.name+" ?");
+                System.out.println("- Move (F)orward");
+                System.out.println("- Move (B)ackward");
+                System.out.println("- (I)nteract with the location you're at");
+                System.out.println("- (O)bserve the place you're at");
+                System.out.println("E(x)it");
+            }
+            else if (choixBis.equals("O")){
+                //System.out.println("jsuislà");
+                this.observer();
+            }
+            else if (choixBis.equals("F") && this.lieu.position!=Position.Sortie){
+                move(this.lieu=lieu.get(lieu.indexOf(this.lieu)+1));
+            }
+            else if(choixBis.equals("B") && this.lieu.position!=Position.Oiseaux){
+                move(this.lieu=lieu.get(lieu.indexOf(this.lieu)-1));
+            }
+            else if (choixBis.equals("I")){
+                if (!this.lieu.animals.isEmpty()){
+                    this.interact();
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.flush();
+                    System.out.println("You can :");
+                    System.out.println("- Take a (P)hoto");
+                    System.out.println("- Take a (S)elfie");
+                    System.out.println("- Return to the (M)ain menu");
+                    while(true){
+                    String interaction=scanner.nextLine();
+                    interaction.toUpperCase();
+                        if (interaction.equals("P")){
+                            takePhoto();
+                            break;
+
+                        }
+                        else if (interaction.equals("S")){
+                            takeSelfie();
+                            break;
+
+                        }
+                        else if(interaction.equals("M")){
+                            break;
+                        }
+                    } 
+                }
+                else{
+                    talk("Bah y a rien ici...");
+                }
+                   
+            }
+            else if(choixBis.equals("X")){
+                //System.out.flush();
+                System.out.println("Nous espérons que vous avez aimé jouer à notre jeu ! Si vous avez joué en tant qu'adulte, certaines interactions sont chnageantes en fonction de l'âge n'hésitez pas essayer en créant d'autres personnages !");
+            }
+            else{
+                System.out.println("Invalid action");
+            }
+                   
+        
+        
     }
 }
