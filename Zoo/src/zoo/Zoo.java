@@ -48,6 +48,7 @@ public class Zoo {
         ArrayList<Animal> girafes;
         ArrayList<Animal> lions;
         ArrayList<Animal> serpents;
+       
         
         //Initialisation des personnes
         Employee Caissiere;
