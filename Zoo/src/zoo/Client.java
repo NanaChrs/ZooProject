@@ -115,22 +115,22 @@ public class Client extends People implements Talk, Interactions{
             talk("Woooooow !!! L'aquarium est tellement grand ! Regarde ces vitres et ces poissons !!");
         }
         else if (this.lieu.position==Position.Elephants){
-            talk("Ces éléphants sont tellement impressionnants et grands !! Je n'en avais jamais vu d'aussi beaux");
+            talk("Ces éléphants sont tellement impressionnants et grands !! Je n'en avais jamais vu d'aussi beaux.");
         }
         else if(this.lieu.position==Position.Girafes){
             talk("Cette girafe est tellement grand que sa tête est au dessus des nuages !! WOOOOOOOOOOOOOW!");
         }
         else if (this.lieu.position==Position.Lions){
-            talk("Ces lions font tellement peurs on dirait qu'ils vont me tuer... J'ai peur mais j'aimerais bien les caresser");
+            talk("Ces lions font tellement peurs on dirait qu'ils vont me tuer... J'ai peur mais j'aimerais bien les caresser.");
         }
         else if(this.lieu.position==Position.Oiseaux){
             talk("Oh lala c'est tellement bruyant de voir des poules...");
         }
         else if (this.lieu.position==Position.Pandas){
-            talk("Ils sont tellement mignoooons !! Je veux lui faire un câlin");
+            talk("Ils sont tellement mignoooons !! Je veux lui faire un câlin.");
         }
         else if(this.lieu.position==Position.Serpents){
-            talk("Brr les serpents sotn assez répugnants ");
+            talk("Brr les serpents sont assez répugnants.");
         }
         else if(this.lieu.position==Position.Singes){
             talk("haha les singes sont tellement drôles... Mais... Mais qu'est-ce qu'ils font ces 2 singes là ?");
@@ -139,7 +139,7 @@ public class Client extends People implements Talk, Interactions{
             talk("Mooooh trop chou ces petits suricaaaates !!");
         }
         else if (this.lieu.position==Position.Zebras){
-            talk("Wow on dirait de gros poneys noirs et blancs");
+            talk("Wow on dirait de gros poneys noirs et blancs.");
         }
         else if(this.lieu.position==Position.Restaurant){
             manger();
@@ -230,7 +230,7 @@ public class Client extends People implements Talk, Interactions{
             }
             else if(choixBis.equals("X")){
                 //System.out.flush();
-                System.out.println("Nous espérons que vous avez aimé jouer à notre jeu ! Si vous avez joué en tant qu'adulte, certaines interactions sont chnageantes en fonction de l'âge n'hésitez pas essayer en créant d'autres personnages !");
+                System.out.println("Nous espérons que vous avez aimé jouer à notre jeu ! Si vous avez joué en tant qu'adulte, certaines interactions sont changeantes en fonction de l'âge n'hésitez pas essayer en créant d'autres personnages !");
             }
             else{
                 System.out.println("Invalid action");
