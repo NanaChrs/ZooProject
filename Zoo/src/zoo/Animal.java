@@ -16,7 +16,7 @@ public abstract class Animal implements Talk {
     boolean dormir;   
     boolean jouer;
     boolean encolère;
-    String name = "L'animal n'est pas encore un nom. Utilise setName() de lui nommer ";
+    String name = "L'animal n'a pas encore un nom. Utilisez setName() pour le nommer ";
     String sound;
     
     protected boolean getFaim(){

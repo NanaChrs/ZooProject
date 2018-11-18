@@ -37,6 +37,7 @@ public class Location {
         broken = false; 
     }
     
+    
     public boolean isSomeoneSick(){
         for (Animal animal : animals){
             if (animal.malade){
@@ -46,14 +47,62 @@ public class Location {
         return false;
     }
     
-    public boolean isSomeoneAngry(){
+    public ArrayList<String> isSomeoneAngry(){
+        ArrayList<String> liste= new ArrayList();
+        liste.add("");
         for (Animal animal : animals){
             if (animal.faim){
-                return true;
+                liste.add(animal.name);
             }
         }
-        return false;
+        return liste;
     }
+    
+    public ArrayList<String> info(){
+        ArrayList<String> liste= new ArrayList();
+        for (Animal animal: animals){
+            String sentence="";
+            sentence+="Un "+animal.getClass().getSimpleName()+"qui s'appelle "+animal.name+".";
+            if (animal.faim){
+                animal.talk("J'ai faiiiiim");
+            }
+            if (animal.soif){
+                animal.talk("J'ai soif");
+            }
+            if (animal.malade){
+                animal.talk("Je suis malade");
+            }
+            if (animal.encolère){
+                animal.talk("*angry*");
+            }
+            if (animal.jouer){
+                animal.talk("*en train de jouer*");
+            }
+            if (animal.dormir){
+                animal.talk("zzzzz");
+            }
+            
+            
+            liste.add(sentence);
+        }
+    }
+    
+    /*
+    public String[][] getNameAndAttributes(){
+        int length=animals.size();
+        String[][] liste = new String[length][7];
+        int i=0;
+        for (Animal animal: animals){
+            liste[i][0]=animal.name;
+            liste[i][1]=String.valueOf(animal.malade);
+            liste[i][2]=String.valueOf(animal.faim);
+            liste[i][3]=String.valueOf(animal.soif);
+            liste[i][4]=String.valueOf(animal.dormir);
+            liste[i][5]=String.valueOf(animal.jouer);
+            liste[i][6]=String.valueOf(animal.encolère);
+        }
+        return liste;
+    }*/
     
     
     

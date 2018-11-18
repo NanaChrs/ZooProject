@@ -23,7 +23,7 @@ public class Poisson extends Animal{
     
     @Override
     public void talk(String s){
-        System.out.println("Poisson: " + sound + s);
+        System.out.println(this.getClass().getSimpleName()+"("+this.name+"): "+s+ sound);
     }
     
  /*   @Override

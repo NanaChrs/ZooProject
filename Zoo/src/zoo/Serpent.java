@@ -23,7 +23,7 @@ public class Serpent extends Animal{
     
     @Override
     public void talk(String s){
-        System.out.println("Serpent: " + sound + s);
+        System.out.println(this.getClass().getSimpleName()+"("+this.name+"): "+s+ sound);
     }
     
   /*  @Override

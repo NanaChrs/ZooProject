@@ -22,7 +22,7 @@ public class Suricate extends Animal {
     
     @Override
     public void talk(String s){
-        System.out.println("Suricat: " + sound + s);
+        System.out.println(this.getClass().getSimpleName()+"("+this.name+"): "+s+ sound);
     }
     
 /*    @Override

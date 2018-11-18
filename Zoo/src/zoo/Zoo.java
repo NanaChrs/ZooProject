@@ -150,6 +150,17 @@ public class Zoo {
         Scanner keyboard = new Scanner(System.in);
         Client joueur;
         
+        lieux.get(1).animals=oiseaux;
+        lieux.get(2).animals=pandas;
+        lieux.get(3).animals=suricates;
+        lieux.get(4).animals=serpents;
+        lieux.get(6).animals=lions;
+        lieux.get(7).animals=girafes;
+        lieux.get(8).animals=zebras;
+        lieux.get(9).animals=singes;
+        lieux.get(10).animals=elephants;
+        lieux.get(11).animals=aquarium;
+        
         
         try{               
             //Arrivée dans le zoo (à la caisse)

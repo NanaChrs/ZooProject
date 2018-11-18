@@ -24,7 +24,7 @@ public class Éléphant extends Animal{
     
     @Override
     public void talk(String s){
-        System.out.println("Éléphant: " + sound + s);
+        System.out.println(this.getClass().getSimpleName()+"("+this.name+"): "+s+ sound);
     }
     
  /*   @Override

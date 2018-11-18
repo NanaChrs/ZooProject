@@ -205,20 +205,28 @@ public class Client extends People implements Talk, Interactions{
                     System.out.println("- Take a (P)hoto");
                     System.out.println("- Take a (S)elfie");
                     System.out.println("- Return to the (M)ain menu");
-                    while(true){
                     String interaction=scanner.nextLine();
-                    interaction.toUpperCase();
-                        if (interaction.equals("P")){
-                            takePhoto();
+                    //System.out.println(interaction);
+                    String interaction2=interaction.toUpperCase();
+                    while(true){
+                        
+                        
+                        System.out.println(interaction);
+                        if (interaction2.equals("P")){
+                            this.takePhoto();
                             break;
 
                         }
-                        else if (interaction.equals("S")){
-                            takeSelfie();
+                        else if (interaction2.equals("S")){
+                            this.takeSelfie();
                             break;
 
                         }
-                        else if(interaction.equals("M")){
+                        else if(interaction2.equals("M")){
+                            break;
+                        }
+                        else if (interaction2.equals("X")){
+                            System.out.println("Nous espérons que vous avez aimé jouer à notre jeu ! Si vous avez joué en tant qu'adulte, certaines interactions sont changeantes en fonction de l'âge n'hésitez pas essayer en créant d'autres personnages");
                             break;
                         }
                     } 

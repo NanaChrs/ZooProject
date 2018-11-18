@@ -12,7 +12,7 @@ package zoo;
 public class Oiseau extends Animal{
     
     public Oiseau(){
-        sound = "Chirp! Chirp! Chirp!";
+        sound = "*Chirp! Chirp! Chirp!*";
     }
     
      @Override
@@ -23,7 +23,7 @@ public class Oiseau extends Animal{
     
     @Override
     public void talk(String s){
-        System.out.println("Oiseau: " + sound + s);
+        System.out.println(this.getClass().getSimpleName()+"("+this.name+"): "+s+ sound);
     }
     
    /* @Override

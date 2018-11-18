@@ -23,7 +23,7 @@ public class Zèbra extends Animal{
     
     @Override
     public void talk(String s){
-        System.out.println("Zébra: " + sound + s);
+        System.out.println(this.getClass().getSimpleName()+"("+this.name+"): "+s+ sound);
     }
     
   /*  @Override
