@@ -10,7 +10,7 @@ package zoo;
  * @author storyd
  */
 public abstract class Animal implements Talk {
-    boolean faim;   //implement in subclass to get name of class 
+    boolean faim;   
     boolean soif;    
     boolean malade;  //vet has a method that can make animal well again
     boolean dormir;   
@@ -102,8 +102,10 @@ public abstract class Animal implements Talk {
     }
     
     protected void setName(String n){
-        name = n;
-        System.out.println("Maintenant, il s'appelle " + name + ".");
+        if(name != "L'animal n'est pas encore un nom. Utilise setName() de lui nommer "){
+           System.out.println("Maintenant, il s'appelle " + name + ".");
+        }
+        name = n; 
     }
     
     protected String getSound(){
