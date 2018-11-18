@@ -47,22 +47,18 @@ public class Location {
         return false;
     }
     
-    public ArrayList<String> isSomeoneAngry(){
-        ArrayList<String> liste= new ArrayList();
-        liste.add("");
+    public boolean isSomeoneAngry(){
         for (Animal animal : animals){
             if (animal.faim){
-                liste.add(animal.name);
+                return true;
             }
         }
-        return liste;
+        return false;
     }
     
-    public ArrayList<String> info(){
-        ArrayList<String> liste= new ArrayList();
+    public void info(){
         for (Animal animal: animals){
-            String sentence="";
-            sentence+="Un "+animal.getClass().getSimpleName()+"qui s'appelle "+animal.name+".";
+            System.out.println("Un "+animal.getClass().getSimpleName()+" qui s'appelle "+animal.name+".");
             if (animal.faim){
                 animal.talk("J'ai faiiiiim");
             }
@@ -82,8 +78,6 @@ public class Location {
                 animal.talk("zzzzz");
             }
             
-            
-            liste.add(sentence);
         }
     }
     

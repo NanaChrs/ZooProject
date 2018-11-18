@@ -145,8 +145,8 @@ public class Zoo {
         serpents.add(basilisk);
         
         //Initialisation des personnes
-        Employee Caissiere;
-        Caissiere = new Cashier(lieux.get(0));
+        Cashier caissiere;
+        caissiere = new Cashier(lieux.get(0));
         Scanner keyboard = new Scanner(System.in);
         Client joueur;
         
@@ -164,16 +164,18 @@ public class Zoo {
         
         try{               
             //Arrivée dans le zoo (à la caisse)
-            Caissiere.talk("En premier lieu, quel est votre prénom ?");
+            caissiere.talk("En premier lieu, quel est votre prénom ?");
             String line=keyboard.nextLine();
-            Caissiere.talk("Deuxièmement, quel âge avez-vous ?");
+            caissiere.talk("Deuxièmement, quel âge avez-vous ?");
             int age=keyboard.nextInt();
             keyboard.nextLine();
-            Caissiere.talk("Et en dernier êtes vous étudiant ? Entrez 1 pour oui et 0 pour non.");
+            caissiere.talk("Et en dernier êtes vous étudiant ? Entrez 1 pour oui et 0 pour non.");
             int student=keyboard.nextInt();
             keyboard.nextLine();
             joueur=new Client(isBoolean(student), age, line, lieux.get(1));
-            Caissiere.talk("Nous vous souhaitons un agréable passage au zoo ! J'espère que vous allez vous amuser. Bonne journée !");
+            caissiere.talk("Dans ce cas vous nous devez:"+caissiere.prix(joueur)+" €.");
+            joueur.talk("Et voici !");
+            caissiere.talk("Nous vous souhaitons un agréable passage au zoo ! J'espère que vous allez vous amuser. Bonne journée !");
             
             //Jeu
             

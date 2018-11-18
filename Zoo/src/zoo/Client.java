@@ -110,7 +110,8 @@ public class Client extends People implements Talk, Interactions{
     }
     
     public void observer(){
-        //System.out.println("là");
+        System.out.println("Dans l'enclos des "+this.lieu.position+" il y a:");
+        this.lieu.info();
         if (this.lieu.position==Position.Aquarium){
             talk("Woooooow !!! L'aquarium est tellement grand ! Regarde ces vitres et ces poissons !!");
         }
@@ -154,24 +155,23 @@ public class Client extends People implements Talk, Interactions{
         
     }
     
-    public boolean interact(){
+    public void interact(){
         if (this.lieu.isSomeoneSick()){
             talk("Oh non ! Un animal est malade !! Il faut appeler le vétérinaire !");
-            return true;
+            
         }
         else if (this.lieu.isSomeoneAngry()){
             talk("Oh lala !! On dirait qu'un des animaux a faim... J'espère qu'il ne va pas nous manger !!");
-            return true;
+            
         }
         else if (this.age<=10 && !this.lieu.animals.isEmpty()){
-            if (this.lieu.position!=Position.Aquarium)
+            if (this.lieu.position!=Position.Aquarium){
                 talk("Héhé je vais embêter le*a*s "+this.lieu.animals.get(0).getClass()+" et lui jeter des bonbons à la figure");
                 this.lieu.animals.get(0).talk("");
                 talk("Oh j'ai eu peur je ne referais plus ça !!!");
-            return true;
+                    }
+                
         }
-        return false;
-        
     }
     
     public void printAndGetChoices(String choix, ArrayList<Location> lieu){
