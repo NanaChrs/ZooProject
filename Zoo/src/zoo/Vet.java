@@ -16,32 +16,35 @@ public class Vet extends People implements Talk, Interactions{
     }
     
     public String introduceSelf(){
-        return "Je suis le vétérinaire. Je m'occupe de des animaux du zoo";
+        return "Somebody called... a vet ?";
     }
     
 
     public void soingerNourrir (){
-        int i=0;
-        int j=0;
         for (Animal animal: this.lieu.animals){
             if (animal.malade){
                 animal.malade=false;
-                this.talk("J'ai soigné le"+animal.getClass());
-                i++;
+                this.talk("I cured "+animal.name+". It was in a bad aspect.");
+                
             }
             if (animal.faim){
                 animal.faim=false;
-                this.talk("J'ai donné à manger au"+animal.getClass());
+                this.talk("I have fed "+animal.name+". Pfew it only had skin on its bones.");
             }
         }
-        if (i==0 && j==0){
-            this.talk("AH! On dirait bien qu'on a pas besoin de moi ici. Je me ferais bien une petite pause moi...");
-        }
+        this.talk("Once again the super Vet did its job ! Call me when you need me... I'll be... around");
+        
     }
     
     @Override
     public void move(Location lieu){
         this.lieu=lieu;
+        this.talk(introduceSelf());
+    }
+    
+    @Override
+    public void talk(String say){
+        System.out.println(this.getClass().getSimpleName()+": "+say+"*wink wink*");
     }
     
 }

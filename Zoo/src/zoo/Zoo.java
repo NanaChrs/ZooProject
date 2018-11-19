@@ -73,14 +73,18 @@ public class Zoo {
         oiseaux.add(donald);
         Oiseau daisy = new Oiseau();
         daisy.setName("Daisy");
+        daisy.setFaim(true);
         oiseaux.add(daisy);
+        
         
         Panda beibei = new Panda();
         beibei.setName("Bei Bei");
         pandas.add(beibei);
         Panda baobao = new Panda();
         baobao.setName("Bao Bao");
+        baobao.setMalade(true);
         pandas.add(baobao);
+        
         
         Suricate timon = new Suricate();
         timon.setName("Timon");
@@ -146,6 +150,7 @@ public class Zoo {
         
         //Initialisation des personnes
         Cashier caissiere;
+        Vet superVet = new Vet(lieux.get(0));
         caissiere = new Cashier(lieux.get(0));
         Scanner keyboard = new Scanner(System.in);
         Client joueur;
@@ -182,11 +187,11 @@ public class Zoo {
             /*System.out.println(lieux.get(1));
             System.out.println(joueur.lieu.position);*/
             String choix="";
-            
-            while(!choix.toLowerCase().equals("x")){
-                joueur.printAndGetChoices("", lieux);
+            boolean keepGoingOn=true;
+            while(keepGoingOn){
+                joueur.printAndGetChoices("", lieux, superVet);
                 choix=keyboard.nextLine();
-                joueur.printAndGetChoices(choix, lieux);
+                keepGoingOn=joueur.printAndGetChoices(choix, lieux, superVet);
                 
                               
                 

@@ -74,7 +74,14 @@ public class Client extends People implements Talk, Interactions{
     
     
     public String introduceSelf(){
-        return "Bonjour ! Je m'appelle "+this.getName()+" et j'ai "+this.getAge()+ " ans";
+        String sentence="Bonjour ! Je m'appelle "+this.getName()+" et j'ai "+this.getAge()+ " ans";
+        if (this.student){
+            sentence+=" et je suis étudiant(e).";
+        }
+        else{
+            sentence+=".";
+        }
+        return sentence;
     }
     
 
@@ -84,99 +91,125 @@ public class Client extends People implements Talk, Interactions{
     }
     
     public void payer(int Montant){
-        talk("Voici "+Montant+"€ pour mon ticket.");
+        this.talk("Voici "+Montant+"€ pour mon ticket.");
     }
 
     public void takeSelfie(){
         if (this.age<40){
-            talk("Et si on prenait un selfie avec le*a*s "+this.lieu.animals.get(0).getClass());
+            this.talk("Et si on prenait un selfie ?");
             System.out.println("*clicks*");
-            talk("Wow mangifaïque ma chérie");
+            this.talk("Wow mangifaïque ma chérie !!");
         }
         else{
-            talk("Mais pourquoi l'appareil photo me prend moi et pas les animaux !! JACQUELINE AIDE MOI STP J'Y COMPRENDS RIEN MOI!");
+            this.talk("Mais pourquoi l'appareil photo me prend moi et pas les animaux !! JACQUELIIIIINE AIDE MOI STP J'Y COMPRENDS RIEN MOI!");
         }
         
     }
     
     public void manger(){
-        talk("Hmm ce plat est très bon !");
+        this.talk("Hmm j'avais faim et ce plat est très bon !");
     }
     
     public void takePhoto(){
-        talk("Prenons une photo de "+this.lieu.animals.get(0).getClass());
-        System.out.println("*clicks*");
-        talk("Wow ! Cette photo est tellement belle !");
+        System.out.println("De quel animal voulez-vous prendre une photo ?");
+        for (int i=0; i<this.lieu.animals.size();i++){
+            System.out.println("Tapez "+ String.valueOf(i)+"pour prendre en photo "+this.lieu.animals.get(i).name+".");
+        }
+        
+        int nimal=-1;
+        while (nimal<0 || nimal>this.lieu.animals.size()-1){
+            Scanner keyboard = new Scanner(System.in);
+            nimal=keyboard.nextInt();
+        }
+       
+        Animal toto=this.lieu.animals.get(nimal);
+        talk("Prenons une photo de "+toto.name);
+        System.out.println("*cliiiiick*");
+        if (toto.getDormir()){
+            this.talk("Mooooh !"+toto.name+" est trop choupinou quand il dort *-*");
+        }
+        else if(toto.getEnColère()){
+            this.talk("Ouhlala !!!"+toto.name+" a l'air hyper énervé... J'espère que c'est pas de ma faute...");
+        }
+        else if(toto.getFaim()){
+            this.talk("Mais qu'est-ce que c'est ce zoo ???"+toto.name+" a l'air affamé je vais appeler WWF !");
+        }
+        else if (toto.getSoif()){
+            this.talk("On dirait que "+ toto.name+"a soif le pauvre...");
+        }
+        else if(toto.getMalade()){
+            this.talk("Mais que font les vétérinaires ???"+toto.name+" est malade on dirait qu'il va vomir !!");
+        }
+        else{
+            this.talk("Cette photo de "+toto.name+ "est ma-gni-fique je vais l'encadrer chez moi !");
+        }
+        
     }
     
     public void observer(){
         System.out.println("Dans l'enclos des "+this.lieu.position+" il y a:");
         this.lieu.info();
-        if (this.lieu.position==Position.Aquarium){
-            talk("Woooooow !!! L'aquarium est tellement grand ! Regarde ces vitres et ces poissons !!");
-        }
-        else if (this.lieu.position==Position.Elephants){
-            talk("Ces éléphants sont tellement impressionnants et grands !! Je n'en avais jamais vu d'aussi beaux.");
-        }
-        else if(this.lieu.position==Position.Girafes){
-            talk("Cette girafe est tellement grand que sa tête est au dessus des nuages !! WOOOOOOOOOOOOOW!");
-        }
-        else if (this.lieu.position==Position.Lions){
-            talk("Ces lions font tellement peurs on dirait qu'ils vont me tuer... J'ai peur mais j'aimerais bien les caresser.");
-        }
-        else if(this.lieu.position==Position.Oiseaux){
-            talk("Oh lala c'est tellement bruyant de voir des poules...");
-        }
-        else if (this.lieu.position==Position.Pandas){
-            talk("Ils sont tellement mignoooons !! Je veux lui faire un câlin.");
-        }
-        else if(this.lieu.position==Position.Serpents){
-            talk("Brr les serpents sont assez répugnants.");
-        }
-        else if(this.lieu.position==Position.Singes){
-            talk("haha les singes sont tellement drôles... Mais... Mais qu'est-ce qu'ils font ces 2 singes là ?");
-        }
-        else if(this.lieu.position==Position.Suricates){
-            talk("Mooooh trop chou ces petits suricaaaates !!");
-        }
-        else if (this.lieu.position==Position.Zebras){
-            talk("Wow on dirait de gros poneys noirs et blancs.");
-        }
-        else if(this.lieu.position==Position.Restaurant){
-            manger();
-        }
-        else if (this.lieu.position==Position.Toilettes){
-            talk("Je dois trop faire pipiiii !!!");
-        }
-        else if (this.lieu.position==Position.Sortie){
-            talk("Oh mince on est déjà arrivés à la sortie ?!");
+        if (null!=this.lieu.position)switch (this.lieu.position) {
+            case Aquarium:
+                talk("Woooooow !!! The aquarium s so big ! Look at that glass and those fish !!");
+                break;
+            case Elephants:
+                talk("Those elephants are so big !! I have never seen elephants so beautiful.");
+                break;
+            case Girafes:
+                talk("It's sot big it looks ike it could touch the clouds in the sky !! WOOOOOOOOOOOOOW!");
+                break;
+            case Lions:
+                talk("Those lions are so scaryyy... I'm so scared but I'd like to pet it.");
+                break;
+            case Oiseaux:
+                talk("Chickens are sooooo loud...");
+                break;
+            case Pandas:
+                talk("They're such cuties!! I want to hug it so baaad.");
+                break;
+            case Serpents:
+                talk("Brr I'm so scared of snakes.");
+                break;
+            case Singes:
+                talk("haha those monekeys are so funny... But... But what are these two doing over there ?");
+                break;
+            case Suricates:
+                talk("Mooooh these little suricats are so cuuuute!!");
+                break;
+            case Zebras:
+                talk("Wow they look like little white and black horses.");
+                break;
+            case Restaurant:
+                manger();
+                break;
+            case Toilettes:
+                talk("I need to pee so baaad!!!");
+                break;
+            case Sortie:
+                talk("Oh noooo is it already the exit ?!");
+                break;
+            default:
+                break;
         }
         
         
     }
     
     public void interact(){
-        if (this.lieu.isSomeoneSick()){
-            talk("Oh non ! Un animal est malade !! Il faut appeler le vétérinaire !");
-            
-        }
-        else if (this.lieu.isSomeoneAngry()){
-            talk("Oh lala !! On dirait qu'un des animaux a faim... J'espère qu'il ne va pas nous manger !!");
-            
-        }
-        else if (this.age<=10 && !this.lieu.animals.isEmpty()){
+        if (this.age<=10 && !this.lieu.animals.isEmpty()){
             if (this.lieu.position!=Position.Aquarium){
-                talk("Héhé je vais embêter le*a*s "+this.lieu.animals.get(0).getClass()+" et lui jeter des bonbons à la figure");
+                talk("Niark Niark I'm going to disturbed those poor "+this.lieu.animals.get(0).getClass().getSimpleName()+" and throw candies at their faces *evil laugh*");
                 this.lieu.animals.get(0).talk("");
-                talk("Oh j'ai eu peur je ne referais plus ça !!!");
+                talk("I'm so scared I should never have done that !!");
                     }
                 
         }
     }
     
-    public void printAndGetChoices(String choix, ArrayList<Location> lieu){
+    public boolean printAndGetChoices(String choix, ArrayList<Location> lieu, Vet superVet){
             String choixBis=choix.toUpperCase();
-            boolean youGotHere=false;
+            
             //System.out.println(choixBis);
             if (choixBis.equals("") || choixBis.equals("C") || choixBis.equals("M")){
                 System.out.println("You're at "+this.lieu.position+". What do you want to do now "+this.name+" ?");
@@ -185,16 +218,21 @@ public class Client extends People implements Talk, Interactions{
                 System.out.println("- (I)nteract with the location you're at");
                 System.out.println("- (O)bserve the place you're at");
                 System.out.println("E(x)it");
+                return true;
             }
             else if (choixBis.equals("O")){
                 //System.out.println("jsuislà");
                 this.observer();
+                return true;
             }
             else if (choixBis.equals("F") && this.lieu.position!=Position.Sortie){
                 move(this.lieu=lieu.get(lieu.indexOf(this.lieu)+1));
+                return true;
             }
             else if(choixBis.equals("B") && this.lieu.position!=Position.Oiseaux){
                 move(this.lieu=lieu.get(lieu.indexOf(this.lieu)-1));
+                return true;
+                    
             }
             else if (choixBis.equals("I")){
                 if (!this.lieu.animals.isEmpty()){
@@ -204,6 +242,11 @@ public class Client extends People implements Talk, Interactions{
                     System.out.println("You can :");
                     System.out.println("- Take a (P)hoto");
                     System.out.println("- Take a (S)elfie");
+                    if (this.lieu.isSomeoneSick()||this.lieu.isSomeoneHungryOrThirsty()){
+                        System.out.println("Since an animal is sick or hungry/thristy you can also:");
+                        System.out.println("- Call a (V)et");
+                        System.out.println("- Call (W)WF");
+                    }
                     System.out.println("- Return to the (M)ain menu");
                     String interaction=scanner.nextLine();
                     //System.out.println(interaction);
@@ -214,34 +257,63 @@ public class Client extends People implements Talk, Interactions{
                         System.out.println(interaction);
                         if (interaction2.equals("P")){
                             this.takePhoto();
-                            break;
+                            return true;
 
                         }
                         else if (interaction2.equals("S")){
                             this.takeSelfie();
-                            break;
+                            return true;
 
                         }
                         else if(interaction2.equals("M")){
-                            break;
+                            return true;
                         }
                         else if (interaction2.equals("X")){
-                            System.out.println("Nous espérons que vous avez aimé jouer à notre jeu ! Si vous avez joué en tant qu'adulte, certaines interactions sont changeantes en fonction de l'âge n'hésitez pas essayer en créant d'autres personnages");
-                            break;
+                            System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionnalities might have been hideen for you so don't hesitate to try with an other player");
+                            return false;
+                        }
+                        else if (this.lieu.isSomeoneHungryOrThirsty() || this.lieu.isSomeoneSick()){
+                            if (interaction2.equals("V")){
+                                this.talk("An animal is not well treaten I need to find a vet so he or she can treat him");
+                                superVet.move(this.lieu);
+                                System.out.println("A wild vet appears");
+                                superVet.talk("I am the super vet what can I do for you ?");
+                                this.talk("Please treat it and feed it, this animal is getting me sad");
+                                superVet.soingerNourrir();
+                                this.talk("Thanks super Vet ! You saved the all planet and the zoo and this animal !");
+                                return true;
+                            }
+                            else if(interaction2.equals("W")){
+                                this.talk("I'm calling WWF we need to shut down this zoo !!!");
+                                for (int i=0; i<5;i++){
+                                    this.talk("NO MORE ANIMAL ABUSE !");
+                                }
+                                choixBis="X";
+                                this.talk("I'm getting out of this zoo before I break anything !!! ");
+                                System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionnalities might have been hideen for you so don't hesitate to try with an other player");
+                                return false;
+                            }
+                        }
+                        else {
+                            System.out.println("Invalid action");
+                            return true;
                         }
                     } 
                 }
                 else{
                     talk("Bah y a rien ici...");
+                    return true;
                 }
                    
             }
             else if(choixBis.equals("X")){
                 //System.out.flush();
-                System.out.println("Nous espérons que vous avez aimé jouer à notre jeu ! Si vous avez joué en tant qu'adulte, certaines interactions sont changeantes en fonction de l'âge n'hésitez pas essayer en créant d'autres personnages !");
+                System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionnalities might have been hideen for you so don't hesitate to try with an other player");
+                return false;
             }
             else{
                 System.out.println("Invalid action");
+                return true;
             }
                    
         

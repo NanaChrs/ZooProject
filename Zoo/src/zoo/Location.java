@@ -14,12 +14,12 @@ import java.util.ArrayList;
 public class Location {
         //attributes
     public Position position; //corresponds to Location Enum
-    protected boolean broken; //0 = false, 1 = true
+    //protected boolean broken; //0 = false, 1 = true
     protected ArrayList<Animal> animals = new ArrayList<Animal>();
 
     public Location(Position position, boolean broken) {
         this.position = position;
-        this.broken = broken;
+        //this.broken = broken;
     }
     
     
@@ -34,7 +34,7 @@ public class Location {
     // constructor
     public Location(Position p){
         position= p;
-        broken = false; 
+        //broken = false; 
     }
     
     
@@ -47,9 +47,9 @@ public class Location {
         return false;
     }
     
-    public boolean isSomeoneAngry(){
+    public boolean isSomeoneHungryOrThirsty(){
         for (Animal animal : animals){
-            if (animal.faim){
+            if (animal.faim||animal.soif){
                 return true;
             }
         }
@@ -60,19 +60,19 @@ public class Location {
         for (Animal animal: animals){
             System.out.println("Un "+animal.getClass().getSimpleName()+" qui s'appelle "+animal.name+".");
             if (animal.faim){
-                animal.talk("J'ai faiiiiim");
+                animal.talk("*hungry*");
             }
             if (animal.soif){
-                animal.talk("J'ai soif");
+                animal.talk("*thirsty*");
             }
             if (animal.malade){
-                animal.talk("Je suis malade");
+                animal.talk("*sick*");
             }
             if (animal.encolère){
                 animal.talk("*angry*");
             }
             if (animal.jouer){
-                animal.talk("*en train de jouer*");
+                animal.talk("*playing*");
             }
             if (animal.dormir){
                 animal.talk("zzzzz");

@@ -102,7 +102,7 @@ public abstract class Animal implements Talk {
     }
     
     protected void setName(String n){
-        if(name != "L'animal n'est pas encore un nom. Utilise setName() de lui nommer "){
+        if(name != "L'animal n'a pas encore un nom. Utilisez setName() pour le nommer "){
            System.out.println("Maintenant, il s'appelle " + name + ".");
         }
         name = n; 

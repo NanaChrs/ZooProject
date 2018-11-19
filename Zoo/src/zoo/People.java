@@ -19,7 +19,7 @@ public abstract class People implements Talk {
     
     @Override
     public void talk(String say){
-        System.out.println(this.getClass()+": "+say);
+        System.out.println(this.getClass().getSimpleName()+": "+say);
     }
 
     public Location getLieu() {
