@@ -29,7 +29,7 @@ public class Cashier extends Employee{
     
     @Override
     public void talk(String string){
-        System.out.println(this.getClass()+": "+ string);
+        System.out.println(this.getClass().getSimpleName()+": "+ string);
     }
     
     public int prix(Client client){

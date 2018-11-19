@@ -7,14 +7,17 @@ package zoo;
 
 /**
  *
- * @author mathi
+ * @author storyd
  */
 public abstract class Animal implements Talk {
-    boolean faim;   //implement in subclass to get name of class 
+    boolean faim;   
     boolean soif;    
     boolean malade;  //vet has a method that can make animal well again
     boolean dormir;   
     boolean jouer;
+    boolean encolère;
+    String name = "L'animal n'a pas encore un nom. Utilisez setName() pour le nommer ";
+    String sound;
     
     protected boolean getFaim(){
         return faim;
@@ -68,11 +71,11 @@ public abstract class Animal implements Talk {
         } 
     }
     
-     protected boolean getJouer(){
+    protected boolean getJouer(){
         return jouer;
     }
     
-    protected void setJouer(boolean j){
+     protected void setJouer(boolean j){
         jouer = j;
         if(j == true){
             System.out.println("L'animal joue.");
@@ -80,8 +83,41 @@ public abstract class Animal implements Talk {
             System.out.println("L'animal ne joue pas.");
         } 
     }
+     
+    protected boolean getEnColère(){
+        return encolère;
+    }
     
-    public abstract String manger();
-    public abstract void talk(String sentence);
-    public abstract String interact(Location lieu);
+    protected void setEnColère(boolean c){
+        encolère = c;
+        if(c == true){
+            System.out.println("L'animal est en colère.");
+        }else{
+            System.out.println("L'animal est tranquil.");
+        } 
+    }
+    
+    protected String getName(){
+        return name;
+    }
+    
+    protected void setName(String n){
+        if(name != "L'animal n'a pas encore un nom. Utilisez setName() pour le nommer "){
+           System.out.println("Maintenant, il s'appelle " + name + ".");
+        }
+        name = n; 
+    }
+    
+    protected String getSound(){
+        return sound;
+    }
+    
+    protected void setSound(String s){
+        sound = s;
+        System.out.println("Maintenant, il dit " + sound + ".");
+    }
+    
+    public abstract void eat();
+  //  public abstract void talk(String sentence);
+  //  public abstract String interact(Employee person);
 }
