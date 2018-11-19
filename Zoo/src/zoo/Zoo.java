@@ -189,6 +189,8 @@ public class Zoo {
             String choix="";
             boolean keepGoingOn=true;
             while(keepGoingOn){
+                System.out.println("");
+                System.out.println("");
                 joueur.printAndGetChoices("", lieux, superVet);
                 choix=keyboard.nextLine();
                 keepGoingOn=joueur.printAndGetChoices(choix, lieux, superVet);

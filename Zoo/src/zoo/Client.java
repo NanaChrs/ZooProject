@@ -218,6 +218,7 @@ public class Client extends People implements Talk, Interactions{
                 System.out.println("- (I)nteract with the location you're at");
                 System.out.println("- (O)bserve the place you're at");
                 System.out.println("E(x)it");
+                System.out.println("");
                 return true;
             }
             else if (choixBis.equals("O")){
@@ -238,7 +239,6 @@ public class Client extends People implements Talk, Interactions{
                 if (!this.lieu.animals.isEmpty()){
                     this.interact();
                     Scanner scanner = new Scanner(System.in);
-                    System.out.flush();
                     System.out.println("You can :");
                     System.out.println("- Take a (P)hoto");
                     System.out.println("- Take a (S)elfie");
