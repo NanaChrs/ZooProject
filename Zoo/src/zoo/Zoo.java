@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package zoo;
 
 import java.util.ArrayList;
@@ -48,104 +44,72 @@ public class Zoo {
         ArrayList<Animal> girafes = new ArrayList<>();
         ArrayList<Animal> lions = new ArrayList<>();
         ArrayList<Animal> serpents = new ArrayList<>();
-        
-        //COMMENT AJOUTER DES ARRAYLISTS À LES ÉLÉMENTS DE LIEUX???????
-        
+                
         //Ajouter des animaux à chaque ArrayList
-        Poisson flounder = new Poisson();
-        flounder.setName("Flounder");
+        Poisson flounder = new Poisson("Flounder");
         aquarium.add(flounder);
-        Poisson nemo = new Poisson();
-        nemo.setName("Nemo");
+        Poisson nemo = new Poisson("Nemo");
         aquarium.add(nemo);
         
-        Oiseau tweety = new Oiseau();
-        tweety.setName("Tweety");
+        Oiseau tweety = new Oiseau("Tweety");
         oiseaux.add(tweety);
-        Oiseau tator = new Oiseau();
-        tator.setName("Tator");
+        Oiseau tator = new Oiseau("Tator");
         oiseaux.add(tator);
-        Oiseau tot = new Oiseau();
-        tot.setName("Tot");
+        Oiseau tot = new Oiseau("Tot");
         oiseaux.add(tot);
-        Oiseau donald = new Oiseau();
-        donald.setName("Donald");
+        Oiseau donald = new Oiseau("Donald");
         oiseaux.add(donald);
-        Oiseau daisy = new Oiseau();
-        daisy.setName("Daisy");
-        daisy.setFaim(true);
+        Oiseau daisy = new Oiseau("Daisy");
         oiseaux.add(daisy);
         
         
-        Panda beibei = new Panda();
-        beibei.setName("Bei Bei");
+        Panda beibei = new Panda("Bei Bei");
         pandas.add(beibei);
-        Panda baobao = new Panda();
-        baobao.setName("Bao Bao");
-        baobao.setMalade(true);
+        Panda baobao = new Panda("Bao Bao");
         pandas.add(baobao);
         
         
-        Suricate timon = new Suricate();
-        timon.setName("Timon");
+        Suricate timon = new Suricate("Timon");
         suricates.add(timon);
-        Suricate max = new Suricate();
-        max.setName("Max");
+        Suricate max = new Suricate("Max");
         suricates.add(max);
         
-        Éléphant dumbo = new Éléphant();
-        dumbo.setName("Dumbo");
+        Éléphant dumbo = new Éléphant("Dumbo");
         elephants.add(dumbo);
-        Éléphant horton = new Éléphant();
-        horton.setName("Horton");
+        Éléphant horton = new Éléphant("Horton");
         elephants.add(horton);
         
-        Singe rafiki = new Singe();
-        rafiki.setName("Rafiki");
+        Singe rafiki = new Singe("Rafiki");
         singes.add(rafiki);
-        Singe abu = new Singe();
-        abu.setName("Abu");
+        Singe abu = new Singe("Abu");
         singes.add(abu);
-        Singe george = new Singe();
-        george.setName("Curious George");
+        Singe george = new Singe("Curious George");
         singes.add(george);
         
-        Zèbra marty = new Zèbra();
-        marty.setName("Marty");
+        Zèbra marty = new Zèbra("Stripes");
         zebras.add(marty);
-        Zèbra stripes = new Zèbra();
-        stripes.setName("Stripes");
+        Zèbra stripes = new Zèbra("Marty");
         zebras.add(stripes);
         
-        Girafe gigi = new Girafe();
-        gigi.setName("Gigi");
-        //System.out.println(gigi.toString());
+        Girafe gigi = new Girafe("Gigi");
         girafes.add(gigi);
-        Girafe joe = new Girafe();
-        gigi.setName("Joe");
+        Girafe joe = new Girafe("Joe");
         girafes.add(joe);
         
-        Lion simba = new Lion();
-        simba.setName("Simba");
+        Lion simba = new Lion("Simba");
         lions.add(simba);
-        Lion mufasa = new Lion();
-        mufasa.setName("Mufasa");
+        Lion mufasa = new Lion("Mufasa");
         lions.add(mufasa);
-        Lion nala = new Lion();
-        nala.setName("Nala");
+        Lion nala = new Lion("Nala");
         lions.add(nala);
-        Lion scar = new Lion();
-        scar.setName("Scar");
+        Lion scar = new Lion("Scar");
         lions.add(scar);
-        Lion kiara = new Lion();
-        kiara.setName("Kiara");
+        Lion kiara = new Lion("Kiara");
         lions.add(kiara);
         
-        Serpent nagini = new Serpent();
-        nagini.setName("Nagini");
+        Serpent nagini = new Serpent("Nagini");
         serpents.add(nagini);
-        Serpent basilisk = new Serpent();
-        basilisk.setName("Basilisk de Serpentard");
+        Serpent basilisk = new Serpent("Basilisk de Serpentard");
         serpents.add(basilisk);
         
         //Initialisation des personnes
@@ -159,12 +123,14 @@ public class Zoo {
         lieux.get(2).animals=pandas;
         lieux.get(3).animals=suricates;
         lieux.get(4).animals=serpents;
+        //il faut ne utilise pas 5 car c'est cet endroit est pour le resteraunt (donc, nous ne voulons qu'ils mangent nos répas ! 
         lieux.get(6).animals=lions;
         lieux.get(7).animals=girafes;
-        lieux.get(8).animals=zebras;
-        lieux.get(9).animals=singes;
-        lieux.get(10).animals=elephants;
-        lieux.get(11).animals=aquarium;
+        //il faut ne utilise pas 8 car c'est cet endroit est pour les toilettes (donc, rien des animaux là-bas, nous esperons ! 
+        lieux.get(9).animals=zebras;
+        lieux.get(10).animals=singes;
+        lieux.get(11).animals=elephants;
+        lieux.get(12).animals=aquarium;
         
         
         try{               
@@ -191,31 +157,21 @@ public class Zoo {
             while(keepGoingOn){
                 joueur.printAndGetChoices("", lieux, superVet);
                 choix=keyboard.nextLine();
-                keepGoingOn=joueur.printAndGetChoices(choix, lieux, superVet);
+                keepGoingOn=joueur.printAndGetChoices(choix, lieux, superVet);             
                 
-                              
-                
-            }
-                
-            
+            }   
         }
         catch (InputMismatchException e){
             System.out.println(e+": Vous n'avez pas entré le bon type demandé");
         }
         catch (Exception e){
             System.out.println(e);
-        }
-        
-
-        
-        
+        } 
     }
     
     public static boolean isBoolean(int bool){
         if (bool==1){return true;}
         else{return false;}
     }
-    
-    
     
 }
