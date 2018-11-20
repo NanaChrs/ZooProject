@@ -113,7 +113,7 @@ public class Client extends People implements Talk, Interactions{
     public void takePhoto(){
         System.out.println("De quel animal voulez-vous prendre une photo ?");
         for (int i=0; i<this.lieu.animals.size();i++){
-            System.out.println("Tapez "+ String.valueOf(i)+"pour prendre en photo "+this.lieu.animals.get(i).name+".");
+            System.out.println("Tapez "+ String.valueOf(i) + " pour prendre en photo " + this.lieu.animals.get(i).name + ".");
         }
         
         int nimal=-1;
@@ -123,25 +123,25 @@ public class Client extends People implements Talk, Interactions{
         }
        
         Animal toto=this.lieu.animals.get(nimal);
-        talk("Prenons une photo de "+toto.name);
+        talk("Prenons une photo de "+toto.getName());
         System.out.println("*cliiiiick*");
         if (toto.getDormir()){
-            this.talk("Mooooh !"+toto.name+" est trop choupinou quand il dort *-*");
+            this.talk("Mooooh !"+toto.getName()+" est trop choupinou quand il dort *-*");
         }
         else if(toto.getEnColère()){
-            this.talk("Ouhlala !!!"+toto.name+" a l'air hyper énervé... J'espère que c'est pas de ma faute...");
+            this.talk("Ouhlala !!!"+toto.getName()+" a l'air hyper énervé... J'espère que c'est pas de ma faute...");
         }
         else if(toto.getFaim()){
-            this.talk("Mais qu'est-ce que c'est ce zoo ???"+toto.name+" a l'air affamé je vais appeler WWF !");
+            this.talk("Mais qu'est-ce que c'est ce zoo ???"+toto.getName()+" a l'air affamé je vais appeler WWF !");
         }
         else if (toto.getSoif()){
-            this.talk("On dirait que "+ toto.name+"a soif le pauvre...");
+            this.talk("On dirait que "+ toto.getName()+"a soif le pauvre...");
         }
         else if(toto.getMalade()){
-            this.talk("Mais que font les vétérinaires ???"+toto.name+" est malade on dirait qu'il va vomir !!");
+            this.talk("Mais que font les vétérinaires ??? "+toto.getName()+" est malade on dirait qu'il va vomir !!");
         }
         else{
-            this.talk("Cette photo de "+toto.name+ "est ma-gni-fique je vais l'encadrer chez moi !");
+            this.talk("Cette photo de "+toto.getName()+ " est ma-gni-fique !! Je vais l'encadrer chez moi !");
         }
         
     }
@@ -151,16 +151,16 @@ public class Client extends People implements Talk, Interactions{
         this.lieu.info();
         if (null!=this.lieu.position)switch (this.lieu.position) {
             case Aquarium:
-                talk("Woooooow !!! The aquarium s so big ! Look at that glass and those fish !!");
+                talk("Woooooow !!! The aquarium is so big ! Look at that glass and those fish !!");
                 break;
             case Elephants:
                 talk("Those elephants are so big !! I have never seen elephants so beautiful.");
                 break;
             case Girafes:
-                talk("It's sot big it looks ike it could touch the clouds in the sky !! WOOOOOOOOOOOOOW!");
+                talk("It's so big it looks like it could touch the clouds in the sky !! WOOOOOOOOOOOOOW!");
                 break;
             case Lions:
-                talk("Those lions are so scaryyy... I'm so scared but I'd like to pet it.");
+                talk("Those lions are so scaryyy... I'm so scared, but I'd like to pet it.");
                 break;
             case Oiseaux:
                 talk("Chickens are sooooo loud...");
@@ -175,7 +175,7 @@ public class Client extends People implements Talk, Interactions{
                 talk("haha those monekeys are so funny... But... But what are these two doing over there ?");
                 break;
             case Suricates:
-                talk("Mooooh these little suricats are so cuuuute!!");
+                talk("Mooooh these little meerkats are so cuuuute!!");
                 break;
             case Zebras:
                 talk("Wow they look like little white and black horses.");
@@ -212,11 +212,11 @@ public class Client extends People implements Talk, Interactions{
             
             //System.out.println(choixBis);
             if (choixBis.equals("") || choixBis.equals("C") || choixBis.equals("M")){
-                System.out.println("You're at "+this.lieu.position+". What do you want to do now "+this.name+" ?");
+                System.out.println("You're at "+this.lieu.position+". What do you want to do now "+this.name+", ?");
                 System.out.println("- Move (F)orward");
                 System.out.println("- Move (B)ackward");
-                System.out.println("- (I)nteract with the location you're at");
-                System.out.println("- (O)bserve the place you're at");
+                System.out.println("- (I)nteract with your current location");
+                System.out.println("- (O)bserve your current location");
                 System.out.println("E(x)it");
                 return true;
             }
@@ -269,12 +269,15 @@ public class Client extends People implements Talk, Interactions{
                             return true;
                         }
                         else if (interaction2.equals("X")){
-                            System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionnalities might have been hideen for you so don't hesitate to try with an other player");
+                                if(getAge() >= 17)
+                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                else
+                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
                             return false;
                         }
                         else if (this.lieu.isSomeoneHungryOrThirsty() || this.lieu.isSomeoneSick()){
                             if (interaction2.equals("V")){
-                                this.talk("An animal is not well treaten I need to find a vet so he or she can treat him");
+                                this.talk("An animal is not well treated I need to find a vet so he or she can treat him");
                                 superVet.move(this.lieu);
                                 System.out.println("A wild vet appears");
                                 superVet.talk("I am the super vet what can I do for you ?");
@@ -290,12 +293,16 @@ public class Client extends People implements Talk, Interactions{
                                 }
                                 choixBis="X";
                                 this.talk("I'm getting out of this zoo before I break anything !!! ");
-                                System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionnalities might have been hideen for you so don't hesitate to try with an other player");
+                                if(getAge() >= 17)
+                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                else
+                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+
                                 return false;
                             }
                         }
                         else {
-                            System.out.println("Invalid action");
+                            System.out.println("Invalid action. Try something else.");
                             return true;
                         }
                     } 
@@ -308,11 +315,14 @@ public class Client extends People implements Talk, Interactions{
             }
             else if(choixBis.equals("X")){
                 //System.out.flush();
-                System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionnalities might have been hideen for you so don't hesitate to try with an other player");
+                if(getAge() >= 17)
+                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                else
+                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
                 return false;
             }
             else{
-                System.out.println("Invalid action");
+                System.out.println("Invalid action. Try something else.");
                 return true;
             }
                    
