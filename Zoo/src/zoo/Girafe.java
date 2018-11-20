@@ -1,62 +1,70 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package zoo;
 
+import java.util.Random;
 /**
  *
  * @author storyd
  */
 public class Girafe extends Animal{
     
-    public Girafe(){
+    /**
+     * This constructor initializes the following attributes randomly:
+     * faim, soif, malade, jouer, encolère, malade
+     * This allows each experience with the program to be unique.
+     * 
+     * @param n the String for the animal's name attribute
+     * 
+     * However, it would not make sense for an animal to be either playing or
+     * angry while it is sleeping. To make this zoo more interactive (one
+     * where not few animals are sleeping) after the attributes are assigned,
+     * if both the jouer and encolère attribute are false, the dormir attribute
+     * is randomly assigned to true or false. In the case that either jouer 
+     * or encolère is true, dormir is automatically assigned to false.
+     * 
+     * Finally, the sound attribute is unique to this animal.
+     */
+    public Girafe(String n){
+        name = n;
+        Random random = new Random();
+        faim = random.nextBoolean();   
+        soif = random.nextBoolean();    
+        malade = random.nextBoolean(); 
+        jouer = random.nextBoolean();
+        encolère = random.nextBoolean();
+        malade = random.nextBoolean();
+        if(jouer == false && encolère == false)
+            dormir = random.nextBoolean();
+        else
+            dormir = false;
         sound = "*bruit de girafe*";
     }
     
+    /**
+     * This method allows a user to change the animal's faim attribute
+     * from true to false
+     * 
+     */
     @Override
     public void eat(){
         System.out.println("Le girafe a bien mangé des feuilles au haut de l'arbre.");
         faim = false;
     }
     
+    /**
+     * This method allows the animal to speak by printing out the type of animal, it's name, and a given String
+     * @param s the String the animal will say
+     * 
+     */
     @Override
     public void talk(String s){
         System.out.println(this.getClass().getSimpleName()+"("+this.name+"): "+s+ sound);
     }
     
- /*   @Override
-    public void interact(){ 
-        String s = "Je suis content, merci !";
-        if(getFaim() == true){
-            s += "J'ai faim."; 
-        }else{
-            s += "Je n'ai pas faim."; 
-        }
-        if(getSoif() == true){
-            s += "J'ai soif."; 
-        }else{
-            s += "Je n'ai pas soif."; 
-        }
-        if(getMalade() != true){
-            s += "Je ne suis pas malade.";
-        }else{
-            s += "Je suis malade. Aide-moi !";
-        }
-        if(getDormir() == true){
-            s += "Shhhh ! Je dors."; 
-        }else{
-            s += "Je ne dors pas."; 
-        }
-        if(getJouer() == true){
-            s += "Je joue.";
-        }else{
-            s += "Je ne joue pas.";
-        }
-        talk("Je suis un girafe et " + s);
-    }
-*/    
+    /**
+     * This method displays all of the animal's attributes
+     * @return Class, name, sound, faim, soif, malade, dormir, jouer, and encolère,
+     */
     @Override
     public String toString(){
         return "Type d'animal = Girafe. Nom = " + getName() + ". Sound = " + getSound() + ". Faim = " + getFaim() + ". Soif = " + getSoif() + ". Malade = " + getMalade() + ". Dormir = " + getDormir() + ". Jouer = " + getJouer() + ". En Colère = " + getEnColère() + ".";
