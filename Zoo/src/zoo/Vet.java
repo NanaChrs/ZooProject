@@ -31,6 +31,10 @@ public class Vet extends People implements Talk, Interactions{
                 animal.faim=false;
                 this.talk("I have fed "+animal.name+". Pfew it only had skin on its bones.");
             }
+            if (animal.soif){
+                animal.soif=false;
+                this.talk("I have given "+animal.name+" a drink. Wow ! Such a thirsty animal.");
+            }
         }
         this.talk("Once again the super Vet did its job ! Call me when you need me... I'll be... around");
         
