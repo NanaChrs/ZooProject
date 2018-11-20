@@ -137,12 +137,13 @@ public class Zoo {
             //Arrivée dans le zoo (à la caisse)
             caissiere.talk("En premier lieu, quel est votre prénom ?");
             String line=keyboard.nextLine();
-            caissiere.talk("Deuxièmement, quel âge avez-vous ?");
+            caissiere.talk("Deuxièmement, quel âge avez-vous ? (en chiffres, s'il vous plaît)");
             int age=keyboard.nextInt();
             keyboard.nextLine();
             caissiere.talk("Et en dernier êtes vous étudiant ? Entrez 1 pour oui et 0 pour non.");
             int student=keyboard.nextInt();
             keyboard.nextLine();
+            //maybe add here if numbers are not given, have an exception that will say it doesn't understand the input
             joueur=new Client(isBoolean(student), age, line, lieux.get(1));
             caissiere.talk("Dans ce cas vous nous devez:"+caissiere.prix(joueur)+" €.");
             joueur.talk("Et voici !");
