@@ -212,7 +212,7 @@ public class Client extends People implements Talk, Interactions{
             
             //System.out.println(choixBis);
             if (choixBis.equals("") || choixBis.equals("C") || choixBis.equals("M")){
-                System.out.println("You're at "+this.lieu.position+". What do you want to do now "+this.name+", ?");
+                System.out.println("You're at "+this.lieu.position+". What do you want to do now, "+this.name+" ?");
                 System.out.println("- Move (F)orward");
                 System.out.println("- Move (B)ackward");
                 System.out.println("- (I)nteract with your current location");
