@@ -19,10 +19,18 @@ public abstract class Animal implements Talk {
     String name = "L'animal n'a pas encore un nom. Utilisez setName() pour le nommer ";
     String sound;
     
+    /**
+     * This method allows a user to get the animal's faim attribute
+     * @return faim
+     */
     protected boolean getFaim(){
         return faim;
     }
     
+    /**
+     * This method allows a user to set the animal's faim attribute
+     * 
+     */
     protected void setFaim(boolean f){
         faim = f;
         if(f == true){
@@ -32,10 +40,18 @@ public abstract class Animal implements Talk {
         }   
     }
     
+    /**
+     * This method allows a user to get the animal's soif attribute
+     * @return soif
+     */
     protected boolean getSoif(){
         return soif;
     }
     
+    /**
+     * This method allows a user to set the animal's soif attribute
+     * 
+     */
     protected void setSoif(boolean s){
         soif = s;
         if(s == true){
@@ -45,10 +61,18 @@ public abstract class Animal implements Talk {
         }   
     }
     
+    /**
+     * This method allows a user to get the animal's malade attribute
+     * @return malade
+     */
     protected boolean getMalade(){
         return malade;
     }
     
+    /**
+     * This method allows a user to set the animal's malade attribute
+     * 
+     */
     protected void setMalade(boolean m){
         malade = m;
         if(m == true){
@@ -58,10 +82,18 @@ public abstract class Animal implements Talk {
         } 
     }
     
+    /**
+     * This method allows a user to get the animal's dormir attribute
+     * @return dormir
+     */
     protected boolean getDormir(){
         return dormir;
     }
     
+    /**
+     * This method allows a user to set the animal's dormir attribute
+     * 
+     */
     protected void setDormir(boolean d){
         dormir = d;
         if(d == true){
@@ -71,11 +103,19 @@ public abstract class Animal implements Talk {
         } 
     }
     
+    /**
+     * This method allows a user to get the animal's jouer attribute
+     * @return jouer
+     */
     protected boolean getJouer(){
         return jouer;
     }
     
-     protected void setJouer(boolean j){
+    /**
+     * This method allows a user to set the animal's jouer attribute
+     * 
+     */
+    protected void setJouer(boolean j){
         jouer = j;
         if(j == true){
             System.out.println("L'animal joue.");
@@ -84,10 +124,18 @@ public abstract class Animal implements Talk {
         } 
     }
      
+    /**
+     * This method allows a user to get the animal's faim attribute
+     * @return encolère
+     */
     protected boolean getEnColère(){
         return encolère;
     }
     
+    /**
+     * This method allows a user to set the animal's encolère attribute
+     * 
+     */
     protected void setEnColère(boolean c){
         encolère = c;
         if(c == true){
@@ -97,27 +145,47 @@ public abstract class Animal implements Talk {
         } 
     }
     
+    /**
+     * This method allows a user to get the animal's faim attribute
+     * @return name
+     */
     protected String getName(){
         return name;
     }
     
+    /**
+     * This method allows a user to set the animal's name attribute
+     * @param n the new String that will be set as the animal's name
+     */
     protected void setName(String n){
-        if(name != "L'animal n'a pas encore un nom. Utilisez setName() pour le nommer "){
+        if(!"L'animal n'a pas encore un nom. Utilisez setName() pour le nommer ".equals(name)){
            System.out.println("Maintenant, il s'appelle " + name + ".");
         }
         name = n; 
     }
     
+    /**
+     * This method allows a user to get the animal's faim attribute
+     * @return sound
+     */
     protected String getSound(){
         return sound;
     }
     
+    /**
+     * This method allows a user to set the animal's sound attribute
+     * 
+     */
     protected void setSound(String s){
         sound = s;
         System.out.println("Maintenant, il dit " + sound + ".");
     }
     
+    /**
+     * This abstract method allows a user to change the animal's faim attribute
+     * from true to false
+     * 
+     */
     public abstract void eat();
-  //  public abstract void talk(String sentence);
-  //  public abstract String interact(Employee person);
+
 }
