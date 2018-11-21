@@ -17,7 +17,7 @@ public abstract class Animal implements Talk {
     boolean jouer;
     boolean encolère;
     String name = "";
-    String sound = ;
+    String sound = "";
     
     /**
      * This method allows a user to get the animal's faim attribute
@@ -158,9 +158,7 @@ public abstract class Animal implements Talk {
      * @param n the new String that will be set as the animal's name
      */
     protected void setName(String n){
-        if(!"L'animal n'a pas encore un nom. Utilisez setName() pour le nommer ".equals(name)){
-           System.out.println("Maintenant, il s'appelle " + name + ".");
-        }
+        System.out.println("Maintenant, il s'appelle " + name + ".");
         name = n; 
     }
     
