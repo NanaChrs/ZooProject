@@ -17,7 +17,7 @@ public abstract class Animal implements Talk {
     boolean jouer;
     boolean encolère;
     String name = "";
-    String sound;
+    String sound = ;
     
     /**
      * This method allows a user to get the animal's faim attribute
