@@ -4,7 +4,7 @@ package zoo;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+//import java.io.BufferedReader; 
 /**
  *
  * @author mathi
@@ -13,6 +13,7 @@ public class Zoo {
 
     /**
      * @param args the command line arguments
+     * 
      */
     public static void main(String[] args) {
         // Initialisation du lieu
@@ -46,6 +47,7 @@ public class Zoo {
         ArrayList<Animal> serpents = new ArrayList<>();
                 
         //Ajouter des animaux à chaque ArrayList
+        
         Poisson flounder = new Poisson("Flounder");
         aquarium.add(flounder);
         Poisson nemo = new Poisson("Nemo");
@@ -62,13 +64,11 @@ public class Zoo {
         Oiseau daisy = new Oiseau("Daisy");
         oiseaux.add(daisy);
         
-        
         Panda beibei = new Panda("Bei Bei");
         pandas.add(beibei);
         Panda baobao = new Panda("Bao Bao");
         pandas.add(baobao);
-        
-        
+
         Suricate timon = new Suricate("Timon");
         suricates.add(timon);
         Suricate max = new Suricate("Max");
@@ -132,16 +132,48 @@ public class Zoo {
         lieux.get(11).animals=elephants;
         lieux.get(12).animals=aquarium;
         
-                   
+        //change one animal in each habitat at random to either be hungry, thirsty, or sick
+        lieux.get(1).setAnimalAttributes();
+        lieux.get(2).setAnimalAttributes();
+        lieux.get(3).setAnimalAttributes();
+        lieux.get(4).setAnimalAttributes();
+        lieux.get(6).setAnimalAttributes();
+        lieux.get(7).setAnimalAttributes();
+        lieux.get(9).setAnimalAttributes();
+        lieux.get(10).setAnimalAttributes();
+        lieux.get(11).setAnimalAttributes();
+        lieux.get(12).setAnimalAttributes();
+        
+        /*
+        //try to read in animals
+        BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+            String everything = sb.toString();
+        } finally {
+            br.close();
+}       */
+        
+        
+        
+        try{               
+
             //Arrivée dans le zoo (à la caisse)
-            caissiere.talk("En premier lieu, quel est votre prénom ?");
+            caissiere.talk("In the first place, what's your name?");
             String line=keyboard.nextLine();
             boolean loopTry=true;
             int age=0;
             while (loopTry){
                 try{
                     loopTry=false;
-                    caissiere.talk("Deuxièmement, quel âge avez-vous ?");
+                    caissiere.talk("Secondly, how old are you? (use numerals please)");
                     age=keyboard.nextInt();
                 }
                 catch(InputMismatchException e){
@@ -165,15 +197,15 @@ public class Zoo {
                     loopTry=false;
                 }
                 else{
-                    caissiere.talk("Please answer to this question by yes or no.");
+                    caissiere.talk("Please answer this question by yes or no.");
                 }
             }
             
             //keyboard.nextLine();
             joueur=new Client(isBoolean(student), age, line, lieux.get(1));
-            caissiere.talk("Dans ce cas vous nous devez:"+caissiere.prix(joueur)+" €.");
-            joueur.talk("Et voici !");
-            caissiere.talk("Nous vous souhaitons un agréable passage au zoo ! J'espère que vous allez vous amuser. Bonne journée !");
+            caissiere.talk("Thanks for the information! You owe: "+caissiere.prix(joueur)+" €.");
+            joueur.talk("Here you go !");
+            caissiere.talk("We hope you have a great time at the zoo toay! Have fun!");
             
             //Jeu
             
@@ -190,9 +222,6 @@ public class Zoo {
                 
             }   
         }
-
-        
-    
     
     public static boolean isBoolean(int bool){
         return bool==1;

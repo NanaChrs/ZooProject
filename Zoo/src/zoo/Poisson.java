@@ -28,9 +28,9 @@ public class Poisson extends Animal{
     public Poisson(String n){
         name = n;
         Random random = new Random();
-        faim = random.nextBoolean();   
-        soif = random.nextBoolean();    
-        malade = random.nextBoolean(); 
+        //faim = random.nextBoolean();   
+        //soif = random.nextBoolean();    
+        //malade = random.nextBoolean(); 
         jouer = random.nextBoolean();
         encolère = random.nextBoolean();
         malade = random.nextBoolean();

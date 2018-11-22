@@ -16,8 +16,8 @@ public abstract class Animal implements Talk {
     boolean dormir;   
     boolean jouer;
     boolean encolère;
-    String name = "L'animal n'a pas encore un nom. Utilisez setName() pour le nommer ";
-    String sound;
+    String name = "";
+    String sound = "";
     
     /**
      * This method allows a user to get the animal's faim attribute
@@ -33,11 +33,11 @@ public abstract class Animal implements Talk {
      */
     protected void setFaim(boolean f){
         faim = f;
-        if(f == true){
+        /*if(f == true){
             System.out.println("L'animal a faim.");
         }else{
             System.out.println("L'animal est mangé.");
-        }   
+        } */ 
     }
     
     /**
@@ -54,11 +54,11 @@ public abstract class Animal implements Talk {
      */
     protected void setSoif(boolean s){
         soif = s;
-        if(s == true){
+        /*if(s == true){
             System.out.println("L'animal a soif.");
         }else{
             System.out.println("L'animal a bu.");
-        }   
+        }*/ 
     }
     
     /**
@@ -75,11 +75,11 @@ public abstract class Animal implements Talk {
      */
     protected void setMalade(boolean m){
         malade = m;
-        if(m == true){
+        /*if(m == true){
             System.out.println("L'animal est malade.");
         }else{
             System.out.println("L'animal est en bien santé.");
-        } 
+        }*/
     }
     
     /**
@@ -96,11 +96,11 @@ public abstract class Animal implements Talk {
      */
     protected void setDormir(boolean d){
         dormir = d;
-        if(d == true){
+        /*if(d == true){
             System.out.println("L'animal dort.");
         }else{
             System.out.println("L'animal est éveillé.");
-        } 
+        }*/
     }
     
     /**
@@ -117,16 +117,16 @@ public abstract class Animal implements Talk {
      */
     protected void setJouer(boolean j){
         jouer = j;
-        if(j == true){
+        /*if(j == true){
             System.out.println("L'animal joue.");
         }else{
             System.out.println("L'animal ne joue pas.");
-        } 
+        }*/
     }
      
     /**
-     * This method allows a user to get the animal's faim attribute
-     * @return encolère
+     * This method allows a user to get the animal's encoler attribute
+     * @return encolere
      */
     protected boolean getEnColère(){
         return encolère;
@@ -138,15 +138,15 @@ public abstract class Animal implements Talk {
      */
     protected void setEnColère(boolean c){
         encolère = c;
-        if(c == true){
+        /*if(c == true){
             System.out.println("L'animal est en colère.");
         }else{
             System.out.println("L'animal est tranquil.");
-        } 
+        }*/
     }
     
     /**
-     * This method allows a user to get the animal's faim attribute
+     * This method allows a user to get the animal's name attribute
      * @return name
      */
     protected String getName(){
@@ -158,14 +158,12 @@ public abstract class Animal implements Talk {
      * @param n the new String that will be set as the animal's name
      */
     protected void setName(String n){
-        if(!"L'animal n'a pas encore un nom. Utilisez setName() pour le nommer ".equals(name)){
-           System.out.println("Maintenant, il s'appelle " + name + ".");
-        }
+        //System.out.println("Maintenant, il s'appelle " + name + ".");
         name = n; 
     }
     
     /**
-     * This method allows a user to get the animal's faim attribute
+     * This method allows a user to get the animal's sound attribute
      * @return sound
      */
     protected String getSound(){
@@ -178,7 +176,7 @@ public abstract class Animal implements Talk {
      */
     protected void setSound(String s){
         sound = s;
-        System.out.println("Maintenant, il dit " + sound + ".");
+        //System.out.println("Maintenant, il dit " + sound + ".");
     }
     
     /**

@@ -26,12 +26,12 @@ public class Oiseau extends Animal{
     public Oiseau(String n){
         name = n;
         Random random = new Random();
-        faim = random.nextBoolean();   
-        soif = random.nextBoolean();    
+       // faim = random.nextBoolean();   
+       // soif = random.nextBoolean();    
         malade = random.nextBoolean(); 
         jouer = random.nextBoolean();
         encolère = random.nextBoolean();
-        malade = random.nextBoolean();
+        //malade = random.nextBoolean();
         if(jouer == false && encolère == false)
             dormir = random.nextBoolean();
         else
