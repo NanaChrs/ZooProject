@@ -74,9 +74,9 @@ public class Client extends People implements Talk, Interactions{
     
     
     public String introduceSelf(){
-        String sentence="Bonjour ! Je m'appelle "+this.getName()+" et j'ai "+this.getAge()+ " ans";
+        String sentence="Hello! My name is "+this.getName()+". I'm "+this.getAge()+ " years old";
         if (this.student){
-            sentence+=" et je suis étudiant(e).";
+            sentence+=" and I'm a student.";
         }
         else{
             sentence+=".";
@@ -91,29 +91,29 @@ public class Client extends People implements Talk, Interactions{
     }
     
     public void payer(int Montant){
-        this.talk("Voici "+Montant+"€ pour mon ticket.");
+        this.talk("Here's the "+Montant+"€ for my ticket.");
     }
 
     public void takeSelfie(){
         if (this.age<40){
-            this.talk("Et si on prenait un selfie ?");
+            this.talk("And if we take a selfie ?");
             System.out.println("*clicks*");
-            this.talk("Wow mangifaïque ma chérie !!");
+            this.talk("Wow that's magnificent, my dear!!");
         }
         else{
-            this.talk("Mais pourquoi l'appareil photo me prend moi et pas les animaux !! JACQUELIIIIINE AIDE MOI STP J'Y COMPRENDS RIEN MOI!");
+            this.talk("Why is it taking a picture of me and not the animals!! JACQUELIIIIINE HELP ME PLEASE! I DON'T UNDERSTAND THIS NEWFANGLED TECHNOLOGY");
         }
         
     }
     
     public void manger(){
-        this.talk("Hmm j'avais faim et ce plat est très bon !");
+        this.talk("Ohhh! I'm hungry and this meal looks great!");
     }
     
     public void takePhoto(){
-        System.out.println("De quel animal voulez-vous prendre une photo ?");
+        System.out.println("You would like to take a picture of which animal?");
         for (int i=0; i<this.lieu.animals.size();i++){
-            System.out.println("Tapez "+ String.valueOf(i) + " pour prendre en photo " + this.lieu.animals.get(i).name + ".");
+            System.out.println("Type "+ String.valueOf(i) + " to take a picture of " + this.lieu.animals.get(i).name + ".");
         }
         
         int nimal=-1;
@@ -123,31 +123,31 @@ public class Client extends People implements Talk, Interactions{
         }
        
         Animal toto=this.lieu.animals.get(nimal);
-        talk("Prenons une photo de "+toto.getName());
+        talk("Ohh I'm taking a photo of "+toto.getName());
         System.out.println("*cliiiiick*");
         if (toto.getDormir()){
-            this.talk("Mooooh !"+toto.getName()+" est trop choupinou quand il dort *-*");
+            this.talk("Mooooh !"+toto.getName()+" is so cute when sleeping *-*");
         }
         else if(toto.getEnColère()){
-            this.talk("Ouhlala !!!"+toto.getName()+" a l'air hyper énervé... J'espère que c'est pas de ma faute...");
+            this.talk("Ouhlala !!!"+toto.getName()+" seems angry... I hope it's not my fault...");
         }
         else if(toto.getFaim()){
-            this.talk("Mais qu'est-ce que c'est ce zoo ???"+toto.getName()+" a l'air affamé je vais appeler WWF !");
+            this.talk("What is the terrible zoo??? "+toto.getName()+" looks famished. I'm calling WWF!");
         }
         else if (toto.getSoif()){
-            this.talk("On dirait que "+ toto.getName()+"a soif le pauvre...");
+            this.talk("Aww look at "+ toto.getName()+" the poor animal is so thirsty...");
         }
         else if(toto.getMalade()){
-            this.talk("Mais que font les vétérinaires ??? "+toto.getName()+" est malade on dirait qu'il va vomir !!");
+            this.talk("What are the vets even doing??? "+toto.getName()+" is sick and could start vomiting any minute!!");
         }
         else{
-            this.talk("Cette photo de "+toto.getName()+ " est ma-gni-fique !! Je vais l'encadrer chez moi !");
+            this.talk("This picture of "+toto.getName()+ " est ma-gni-fi-cent!! I'm going to frame it when I get home!");
         }
         
     }
     
     public void observer(){
-        System.out.println("Dans l'enclos des "+this.lieu.position+" il y a:");
+        System.out.println("In the "+this.lieu.position+" exhibit, there are:");
         this.lieu.info();
         if (null!=this.lieu.position)switch (this.lieu.position) {
             case Aquarium:
@@ -172,7 +172,7 @@ public class Client extends People implements Talk, Interactions{
                 talk("Brr I'm so scared of snakes.");
                 break;
             case Singes:
-                talk("haha those monekeys are so funny... But... But what are these two doing over there ?");
+                talk("Haha those monekeys are so funny... But... But what are these two doing over there ?");
                 break;
             case Suricates:
                 talk("Mooooh these little meerkats are so cuuuute!!");
@@ -270,9 +270,9 @@ public class Client extends People implements Talk, Interactions{
                         }
                         else if (interaction2.equals("X")){
                                 if(getAge() >= 17)
-                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
                                 else
-                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
                             return false;
                         }
                         else if (this.lieu.isSomeoneHungryOrThirsty() || this.lieu.isSomeoneSick()){
@@ -280,23 +280,23 @@ public class Client extends People implements Talk, Interactions{
                                 this.talk("An animal is not well treated I need to find a vet so he or she can treat him");
                                 superVet.move(this.lieu);
                                 System.out.println("A wild vet appears");
-                                superVet.talk("I am the super vet what can I do for you ?");
+                                superVet.talk("I am the super vet what can I do for you?");
                                 this.talk("Please treat it and feed it, this animal is getting me sad");
                                 superVet.soingerNourrir();
-                                this.talk("Thanks super Vet ! You saved the all planet and the zoo and this animal !");
+                                this.talk("Thanks super Vet ! You saved the all planet and the zoo and this animal!");
                                 return true;
                             }
                             else if(interaction2.equals("W")){
-                                this.talk("I'm calling WWF we need to shut down this zoo !!!");
+                                this.talk("I'm calling WWF we need to shut down this zoo!!!");
                                 for (int i=0; i<5;i++){
-                                    this.talk("NO MORE ANIMAL ABUSE !");
+                                    this.talk("NO MORE ANIMAL ABUSE!");
                                 }
                                 choixBis="X";
-                                this.talk("I'm getting out of this zoo before I break anything !!! ");
+                                this.talk("I'm getting out of this zoo before I break anything!!! ");
                                 if(getAge() >= 17)
-                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
                                 else
-                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
 
                                 return false;
                             }
@@ -308,7 +308,7 @@ public class Client extends People implements Talk, Interactions{
                     } 
                 }
                 else{
-                    talk("Bah y a rien ici...");
+                    talk("Nothing to see here...");
                     return true;
                 }
                    
@@ -316,9 +316,9 @@ public class Client extends People implements Talk, Interactions{
             else if(choixBis.equals("X")){
                 //System.out.flush();
                 if(getAge() >= 17)
-                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
                 else
-                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
                 return false;
             }
             else{
