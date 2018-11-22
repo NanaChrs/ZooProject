@@ -11,4 +11,5 @@ package zoo;
  */
 public interface Interactions {
     public void move(Location lieu);
+    public void interact();
 }
