@@ -21,10 +21,7 @@ public class Location {
         this.position = position;
         //this.broken = broken;
     }
-    
-    
-    
-    
+   
     //default constructor
  /*   public Location(){
         position = 0;
@@ -60,22 +57,22 @@ public class Location {
         for (Animal animal: animals){
             System.out.println("Un "+animal.getClass().getSimpleName()+" qui s'appelle "+animal.name+".");
             if (animal.faim){
-                animal.talk("*hungry*");
+                animal.talk("*hungry* ");
             }
             if (animal.soif){
-                animal.talk("*thirsty*");
+                animal.talk("*thirsty* ");
             }
             if (animal.malade){
-                animal.talk("*sick*");
+                animal.talk("*sick* ");
             }
             if (animal.encolère){
-                animal.talk("*angry*");
+                animal.talk("*angry* ");
             }
             if (animal.jouer){
-                animal.talk("*playing*");
+                animal.talk("*playing* ");
             }
             if (animal.dormir){
-                animal.talk("zzzzz");
+                animal.talk("*zzzzz* ");
             }
             
         }
