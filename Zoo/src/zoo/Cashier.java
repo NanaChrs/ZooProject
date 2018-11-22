@@ -22,11 +22,9 @@ public class Cashier extends Employee{
     }
     
     public String introduceSelf(){
-        return "Bonjour ! Voulez-vous acheter un ticket ? Pour se faire je dois savoir votre prénom, votre âge et si vous êtes étudiant ou non";
+        return "Hello! Would you like to buy a ticket? If so, I need to know your name, your age, and if you are a student or not.";
     }
 
-   
-    
     @Override
     public void talk(String string){
         System.out.println(this.getClass().getSimpleName()+": "+ string);
@@ -40,8 +38,4 @@ public class Cashier extends Employee{
             return 20;
         }
     }
-    
-    
-    
-    
 }
