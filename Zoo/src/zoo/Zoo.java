@@ -62,13 +62,11 @@ public class Zoo {
         Oiseau daisy = new Oiseau("Daisy");
         oiseaux.add(daisy);
         
-        
         Panda beibei = new Panda("Bei Bei");
         pandas.add(beibei);
         Panda baobao = new Panda("Bao Bao");
         pandas.add(baobao);
-        
-        
+
         Suricate timon = new Suricate("Timon");
         suricates.add(timon);
         Suricate max = new Suricate("Max");
@@ -135,19 +133,19 @@ public class Zoo {
         
         try{               
             //Arrivée dans le zoo (à la caisse)
-            caissiere.talk("En premier lieu, quel est votre prénom ?");
+            caissiere.talk("In the first place, what's your name?");
             String line=keyboard.nextLine();
-            caissiere.talk("Deuxièmement, quel âge avez-vous ? (en chiffres, s'il vous plaît)");
+            caissiere.talk("Secondly, how old are you? (in numerals please)");
             //maybe add here if numbers are not given, have an exception that will say it doesn't understand the input
             int age=keyboard.nextInt();
             keyboard.nextLine();
-            caissiere.talk("Et en dernier êtes vous étudiant ? Entrez 1 pour oui et 0 pour non.");
+            caissiere.talk("Lastly, are you a student? Enter 1 for yes or 0 for no.");
             int student=keyboard.nextInt();
             keyboard.nextLine();
             joueur=new Client(isBoolean(student), age, line, lieux.get(1));
-            caissiere.talk("Dans ce cas vous nous devez:"+caissiere.prix(joueur)+" €.");
-            joueur.talk("Et voici !");
-            caissiere.talk("Nous vous souhaitons un agréable passage au zoo ! J'espère que vous allez vous amuser. Bonne journée !");
+            caissiere.talk("Thanks for the information! You owe: "+caissiere.prix(joueur)+" €.");
+            joueur.talk("Here you go !");
+            caissiere.talk("We hope you have a great time at the zoo toay! Have fun!");
             
             //Jeu
             
@@ -163,7 +161,7 @@ public class Zoo {
             }   
         }
         catch (InputMismatchException e){
-            System.out.println(e+": Vous n'avez pas entré le bon type demandé");
+            System.out.println(e+": You have not given the correct input type. Please try again.");
         }
         catch (Exception e){
             System.out.println(e);
