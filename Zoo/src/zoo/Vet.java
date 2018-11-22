@@ -19,8 +19,8 @@ public class Vet extends People implements Talk, Interactions{
         return "Somebody called... a vet ?";
     }
     
-
-    public void soingerNourrir (){
+    @Override
+    public void interact (){
         for (Animal animal: this.lieu.animals){
             if (animal.malade){
                 animal.malade=false;
@@ -30,6 +30,10 @@ public class Vet extends People implements Talk, Interactions{
             if (animal.faim){
                 animal.faim=false;
                 this.talk("I have fed "+animal.name+". Pfew it only had skin on its bones.");
+            }
+            if (animal.soif){
+                animal.soif=false;
+                this.talk("I have given water to"+animal.name+". It was almost becoming dust !");
             }
         }
         this.talk("Once again the super Vet did its job ! Call me when you need me... I'll be... around");

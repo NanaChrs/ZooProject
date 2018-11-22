@@ -132,17 +132,44 @@ public class Zoo {
         lieux.get(11).animals=elephants;
         lieux.get(12).animals=aquarium;
         
-        
-        try{               
+                   
             //Arrivée dans le zoo (à la caisse)
             caissiere.talk("En premier lieu, quel est votre prénom ?");
             String line=keyboard.nextLine();
-            caissiere.talk("Deuxièmement, quel âge avez-vous ?");
-            int age=keyboard.nextInt();
+            boolean loopTry=true;
+            int age=0;
+            while (loopTry){
+                try{
+                    loopTry=false;
+                    caissiere.talk("Deuxièmement, quel âge avez-vous ?");
+                    age=keyboard.nextInt();
+                }
+                catch(InputMismatchException e){
+                    caissiere.talk("You didn't enter an integer. Please try again.");
+                    loopTry=true;
+                    keyboard.nextLine();
+                }
+                catch (Exception e){
+                    System.out.println(e);
+                    loopTry=true;
+                    keyboard.nextLine();
+                }
+            }
+            loopTry=true;
+            String student="";
             keyboard.nextLine();
-            caissiere.talk("Et en dernier êtes vous étudiant ? Entrez 1 pour oui et 0 pour non.");
-            int student=keyboard.nextInt();
-            keyboard.nextLine();
+            caissiere.talk("Finally, are you a student ? Enter yes if you are and no if you're not");
+            while (loopTry){
+                student=keyboard.nextLine();
+                if (student.toUpperCase().equals("YES") || student.toUpperCase().equals("NO")){
+                    loopTry=false;
+                }
+                else{
+                    caissiere.talk("Please answer to this question by yes or no.");
+                }
+            }
+            
+            //keyboard.nextLine();
             joueur=new Client(isBoolean(student), age, line, lieux.get(1));
             caissiere.talk("Dans ce cas vous nous devez:"+caissiere.prix(joueur)+" €.");
             joueur.talk("Et voici !");
@@ -163,17 +190,16 @@ public class Zoo {
                 
             }   
         }
-        catch (InputMismatchException e){
-            System.out.println(e+": Vous n'avez pas entré le bon type demandé");
-        }
-        catch (Exception e){
-            System.out.println(e);
-        } 
-    }
+
+        
+    
     
     public static boolean isBoolean(int bool){
-        if (bool==1){return true;}
-        else{return false;}
+        return bool==1;
+    }
+    
+    public static boolean isBoolean(String bool){
+        return bool.toUpperCase().equals("OUI") || bool.toUpperCase().equals("YES");
     }
     
 }
