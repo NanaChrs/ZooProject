@@ -17,7 +17,7 @@ public class Location {
     //protected boolean broken; //0 = false, 1 = true
     protected ArrayList<Animal> animals = new ArrayList<Animal>();
 
-    public Location(Position position, boolean broken) {
+    public Location(Position position) {
         this.position = position;
         //this.broken = broken;
     }
@@ -31,11 +31,7 @@ public class Location {
         broken = false; 
     }
 */    
-    // constructor
-    public Location(Position p){
-        position= p;
-        //broken = false; 
-    }
+
     
     
     public boolean isSomeoneSick(){
