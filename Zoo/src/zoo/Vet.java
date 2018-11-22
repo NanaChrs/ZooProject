@@ -24,7 +24,7 @@ public class Vet extends People implements Talk, Interactions{
         for (Animal animal: this.lieu.animals){
             if (animal.malade){
                 animal.malade=false;
-                this.talk("I cured "+animal.name+". It was in a bad aspect.");
+                this.talk("I cured "+animal.name+". It was in a bad state.");
                 
             }
             if (animal.faim){
@@ -33,7 +33,7 @@ public class Vet extends People implements Talk, Interactions{
             }
             if (animal.soif){
                 animal.soif=false;
-                this.talk("I have given water to"+animal.name+". It was almost becoming dust !");
+                this.talk("I have given "+animal.name+" a drink. Wow ! Such a thirsty animal.");
             }
         }
         this.talk("Once again the super Vet did its job ! Call me when you need me... I'll be... around");
@@ -48,7 +48,7 @@ public class Vet extends People implements Talk, Interactions{
     
     @Override
     public void talk(String say){
-        System.out.println(this.getClass().getSimpleName()+": "+say+"*wink wink*");
+        System.out.println(this.getClass().getSimpleName()+": "+say+" *wink wink*");
     }
     
 }

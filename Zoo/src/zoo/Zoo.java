@@ -62,13 +62,11 @@ public class Zoo {
         Oiseau daisy = new Oiseau("Daisy");
         oiseaux.add(daisy);
         
-        
         Panda beibei = new Panda("Bei Bei");
         pandas.add(beibei);
         Panda baobao = new Panda("Bao Bao");
         pandas.add(baobao);
-        
-        
+
         Suricate timon = new Suricate("Timon");
         suricates.add(timon);
         Suricate max = new Suricate("Max");
@@ -134,7 +132,7 @@ public class Zoo {
         
                    
             //Arrivée dans le zoo (à la caisse)
-            caissiere.talk("En premier lieu, quel est votre prénom ?");
+            caissiere.talk("In the first place, what's your name?");
             String line=keyboard.nextLine();
             boolean loopTry=true;
             int age=0;
@@ -171,9 +169,9 @@ public class Zoo {
             
             //keyboard.nextLine();
             joueur=new Client(isBoolean(student), age, line, lieux.get(1));
-            caissiere.talk("Dans ce cas vous nous devez:"+caissiere.prix(joueur)+" €.");
-            joueur.talk("Et voici !");
-            caissiere.talk("Nous vous souhaitons un agréable passage au zoo ! J'espère que vous allez vous amuser. Bonne journée !");
+            caissiere.talk("Thanks for the information! You owe: "+caissiere.prix(joueur)+" €.");
+            joueur.talk("Here you go !");
+            caissiere.talk("We hope you have a great time at the zoo toay! Have fun!");
             
             //Jeu
             
