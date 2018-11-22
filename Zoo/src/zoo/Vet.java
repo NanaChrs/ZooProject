@@ -6,19 +6,26 @@
 package zoo;
 
 /**
- *
+ *  The vet is as its name indicates the child class from Employee which redefines the interact method interact and move + talk
  * @author mathi
  */
-public class Vet extends People implements Talk, Interactions{
+public class Vet extends Employee implements Interactions{
 
     public Vet(Location lieu) {
         super(lieu);
     }
     
+    /**
+     * return a string especial for the vet to introduce itself
+     * @return 
+     */
     public String introduceSelf(){
         return "Somebody called... a vet ?";
     }
     
+    /**
+     * method that cure all the animals in a location
+     */
     @Override
     public void interact (){
         for (Animal animal: this.lieu.animals){
@@ -36,19 +43,27 @@ public class Vet extends People implements Talk, Interactions{
                 this.talk("I have given "+animal.name+" a drink. Wow ! Such a thirsty animal.");
             }
         }
-        this.talk("Once again the super Vet did its job ! Call me when you need me... I'll be... around");
+        this.talk("Once again the super Vet did its job ! Call me when you need me... I'll be... around...");
         
     }
     
+    /**
+     * Method that permits the vet to move and immediately introduce itself
+     * @param lieu 
+     */
     @Override
     public void move(Location lieu){
         this.lieu=lieu;
         this.talk(introduceSelf());
     }
-    
+
+    /**
+     * Method that permits to the vet to speak
+     * @param say 
+     */
     @Override
     public void talk(String say){
-        System.out.println(this.getClass().getSimpleName()+": "+say+" *wink wink*");
+        System.out.println("Super "+ this.getClass().getSimpleName()+": "+say+" *wink wink*");
     }
     
 }

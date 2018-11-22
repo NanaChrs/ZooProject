@@ -15,7 +15,7 @@ public abstract class Animal implements Talk {
     boolean malade;  //vet has a method that can make animal well again
     boolean dormir;   
     boolean jouer;
-    boolean encolère;
+    boolean angry;
     String name = "";
     String sound = "";
     
@@ -129,7 +129,7 @@ public abstract class Animal implements Talk {
      * @return encolère
      */
     protected boolean getEnColère(){
-        return encolère;
+        return angry;
     }
     
     /**
@@ -137,7 +137,7 @@ public abstract class Animal implements Talk {
      * 
      */
     protected void setEnColère(boolean c){
-        encolère = c;
+        angry = c;
         if(c == true){
             System.out.println("L'animal est en colère.");
         }else{

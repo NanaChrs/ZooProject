@@ -6,7 +6,7 @@
 package zoo;
 
 /**
- *
+ * The interface Interactions is used by Vet and Client -- They're the only one able to move and interact with their location
  * @author mathi
  */
 public interface Interactions {

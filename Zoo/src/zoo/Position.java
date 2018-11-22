@@ -10,5 +10,5 @@ package zoo;
  * @author mathi
  */
 public enum Position {
-    Caisse, Oiseaux, Lions, Serpents, Pandas, Elephants, Zebras, Aquarium, Girafes, Singes, Suricates, Sortie, Toilettes, Restaurant
+    Checkout, Birds, Lions, Snakes, Pandas, Elephants, Zebras, Aquarium, Giraffes, Monkeys, Meerkat, Exit, Toilets, Restaurant
 }

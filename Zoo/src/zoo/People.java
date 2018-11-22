@@ -6,30 +6,32 @@
 package zoo;
 
 /**
- *
+ * The class People is the mother class of Employees and Client it is an abstract class giving the parameter location to these ones.
+ * The parameter location is used to know where are the people created and permits them to move also (some cannot move like the Cashier). It is implemented by the talk interface since all people can talk. To construct you just need to give a location in parameter
  * @author mathi
  */
 public abstract class People implements Talk {
-    public Location lieu;
+    protected Location lieu;
 
     public People(Location lieu) {
         this.lieu=lieu;
     }
     
     
-    @Override
-    public void talk(String say){
-        System.out.println(this.getClass().getSimpleName()+": "+say);
-    }
-
+    
+    /**
+     * Getter of the location of People
+     * @return 
+     */
     public Location getLieu() {
         return lieu;
     }
-
-    public void setLieu(Location lieu) {
-        this.lieu = lieu;
-    }
     
+    
+    /**
+     * Gives the String that every people needs to say to introduce himself/herself
+     * @return 
+     */
     public abstract String introduceSelf();
     /*public void move(String lieu){
         String lieuActuel=lieu;

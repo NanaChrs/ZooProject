@@ -17,20 +17,20 @@ public class Zoo {
     public static void main(String[] args) {
         // Initialisation du lieu
         ArrayList<Location> lieux = new ArrayList(14);
-        lieux.add(new Location(Position.Caisse));
-        lieux.add(new Location(Position.Oiseaux));
+        lieux.add(new Location(Position.Checkout));
+        lieux.add(new Location(Position.Birds));
         lieux.add(new Location(Position.Pandas));
-        lieux.add(new Location(Position.Suricates));
-        lieux.add(new Location(Position.Serpents));
+        lieux.add(new Location(Position.Meerkat));
+        lieux.add(new Location(Position.Snakes));
         lieux.add(new Location(Position.Restaurant));
         lieux.add(new Location(Position.Lions));
-        lieux.add(new Location(Position.Girafes));
-        lieux.add(new Location(Position.Toilettes));
+        lieux.add(new Location(Position.Giraffes));
+        lieux.add(new Location(Position.Toilets));
         lieux.add(new Location(Position.Zebras));
-        lieux.add(new Location(Position.Singes));
+        lieux.add(new Location(Position.Monkeys));
         lieux.add(new Location(Position.Elephants));
         lieux.add(new Location(Position.Aquarium));
-        lieux.add(new Location(Position.Sortie));
+        lieux.add(new Location(Position.Exit));
         
         
         //Initialisation des animaux
@@ -71,10 +71,10 @@ public class Zoo {
         suricates.add(timon);
         Suricate max = new Suricate("Max");
         suricates.add(max);
-        
-        Éléphant dumbo = new Éléphant("Dumbo");
+       
+        Elephant dumbo = new Elephant("Dumbo");
         elephants.add(dumbo);
-        Éléphant horton = new Éléphant("Horton");
+        Elephant horton = new Elephant("Horton");
         elephants.add(horton);
         
         Singe rafiki = new Singe("Rafiki");
@@ -84,9 +84,9 @@ public class Zoo {
         Singe george = new Singe("Curious George");
         singes.add(george);
         
-        Zèbra marty = new Zèbra("Stripes");
+        Zebra marty = new Zebra("Stripes");
         zebras.add(marty);
-        Zèbra stripes = new Zèbra("Marty");
+        Zebra stripes = new Zebra("Marty");
         zebras.add(stripes);
         
         Girafe gigi = new Girafe("Gigi");
@@ -191,11 +191,20 @@ public class Zoo {
 
         
     
-    
+    /**
+     * function that test an int and if the int is equal to 1 return true otherwise return false
+     * @param bool
+     * @return bool
+     */
     public static boolean isBoolean(int bool){
         return bool==1;
     }
     
+    /**
+     * function that test a String and return true if the String is equal to yes or oui
+     * @param bool
+     * @return 
+     */
     public static boolean isBoolean(String bool){
         return bool.toUpperCase().equals("OUI") || bool.toUpperCase().equals("YES");
     }

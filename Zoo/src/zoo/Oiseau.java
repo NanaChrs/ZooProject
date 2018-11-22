@@ -30,9 +30,9 @@ public class Oiseau extends Animal{
         soif = random.nextBoolean();    
         malade = random.nextBoolean(); 
         jouer = random.nextBoolean();
-        encolère = random.nextBoolean();
+        angry = random.nextBoolean();
         malade = random.nextBoolean();
-        if(jouer == false && encolère == false)
+        if(jouer == false && angry == false)
             dormir = random.nextBoolean();
         else
             dormir = false;

@@ -6,7 +6,7 @@
 package zoo;
 
 /**
- *
+ * Talk is an interface that carries the abstract method talk which is used in both people and animal classes
  * @author mathi
  */
 public interface Talk {

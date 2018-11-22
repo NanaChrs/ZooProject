@@ -61,7 +61,7 @@ public class Location {
             if (animal.malade){
                 animal.talk("*sick* ");
             }
-            if (animal.encolère){
+            if (animal.angry){
                 animal.talk("*angry* ");
             }
             if (animal.jouer){

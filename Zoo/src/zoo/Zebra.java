@@ -1,24 +1,19 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package zoo;
 
 import java.util.Random;
 
 /**
- *
+ * 
  * @author storyd
  */
-public class Éléphant extends Animal{
+public class Zebra extends Animal{
     
     /**
      * This constructor initializes the following attributes randomly:
      * faim, soif, malade, jouer, encolère, malade
      * This allows each experience with the program to be unique.
      * 
-     * @param n the String for the animal's name attribute 
+     * @param n the String for the animal's name attribute
      * 
      * However, it would not make sense for an animal to be either playing or
      * angry while it is sleeping. To make this zoo more interactive (one
@@ -29,20 +24,20 @@ public class Éléphant extends Animal{
      * 
      * Finally, the sound attribute is unique to this animal.
      */
-    public Éléphant(String n){
+    public Zebra(String n){
         name = n;
         Random random = new Random();
         faim = random.nextBoolean();   
         soif = random.nextBoolean();    
         malade = random.nextBoolean(); 
         jouer = random.nextBoolean();
-        encolère = random.nextBoolean();
+        angry = random.nextBoolean();
         malade = random.nextBoolean();
-        if(jouer == false && encolère == false)
+        if(jouer == false && angry == false)
             dormir = random.nextBoolean();
         else
             dormir = false;
-        sound = "*bruit d'éléphant*";
+        sound = "*bruit de zèbra*";
     }
     
     /**
@@ -51,8 +46,7 @@ public class Éléphant extends Animal{
      */
     @Override
     public void eat(){
-        System.out.println("Éléphant: J'ai un apitit enorme ! Donnez-moi quelque chose à manger s'il vous plaît. N'importe quoi. \n Mmmm c'est delicieux ! Merci beaucoup !");
-        System.out.println("L'éléphant a bien mangé des grandes feuilles.");
+        System.out.println("Le zèbra a bien mangé des herbes.");
         faim = false;
     }
     
@@ -72,6 +66,6 @@ public class Éléphant extends Animal{
      */
     @Override
     public String toString(){
-        return "Type d'animal = Éléphant. Nom = " + getName() + ". Sound = " + getSound() + ". Faim = " + getFaim() + ". Soif = " + getSoif() + ". Malade = " + getMalade() + ". Dormir = " + getDormir() + ". Jouer = " + getJouer() + ". En Colère = " + getEnColère() + ".";
+        return "Type d'animal = Zèbra. Nom = " + getName() + ". Sound = " + getSound() + ". Faim = " + getFaim() + ". Soif = " + getSoif() + ". Malade = " + getMalade() + ". Dormir = " + getDormir() + ". Jouer = " + getJouer() + ". En Colère = " + getEnColère() + ".";
     }
 }
