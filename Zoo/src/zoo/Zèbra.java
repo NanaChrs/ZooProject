@@ -27,9 +27,9 @@ public class Zèbra extends Animal{
     public Zèbra(String n){
         name = n;
         Random random = new Random();
-        faim = random.nextBoolean();   
-        soif = random.nextBoolean();    
-        malade = random.nextBoolean(); 
+        //faim = random.nextBoolean();   
+        //soif = random.nextBoolean();    
+        //malade = random.nextBoolean(); 
         jouer = random.nextBoolean();
         encolère = random.nextBoolean();
         malade = random.nextBoolean();
