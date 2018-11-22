@@ -4,7 +4,7 @@ package zoo;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
-
+//import java.io.BufferedReader; 
 /**
  *
  * @author mathi
@@ -13,6 +13,7 @@ public class Zoo {
 
     /**
      * @param args the command line arguments
+     * 
      */
     public static void main(String[] args) {
         // Initialisation du lieu
@@ -46,6 +47,7 @@ public class Zoo {
         ArrayList<Animal> serpents = new ArrayList<>();
                 
         //Ajouter des animaux à chaque ArrayList
+        
         Poisson flounder = new Poisson("Flounder");
         aquarium.add(flounder);
         Poisson nemo = new Poisson("Nemo");
@@ -129,6 +131,36 @@ public class Zoo {
         lieux.get(10).animals=singes;
         lieux.get(11).animals=elephants;
         lieux.get(12).animals=aquarium;
+        
+        //change one animal in each habitat at random to either be hungry, thirsty, or sick
+        lieux.get(1).setAnimalAttributes();
+        lieux.get(2).setAnimalAttributes();
+        lieux.get(3).setAnimalAttributes();
+        lieux.get(4).setAnimalAttributes();
+        lieux.get(6).setAnimalAttributes();
+        lieux.get(7).setAnimalAttributes();
+        lieux.get(9).setAnimalAttributes();
+        lieux.get(10).setAnimalAttributes();
+        lieux.get(11).setAnimalAttributes();
+        lieux.get(12).setAnimalAttributes();
+        
+        /*
+        //try to read in animals
+        BufferedReader br = new BufferedReader(new FileReader("file.txt"));
+        try {
+            StringBuilder sb = new StringBuilder();
+            String line = br.readLine();
+
+            while (line != null) {
+                sb.append(line);
+                sb.append(System.lineSeparator());
+                line = br.readLine();
+            }
+            String everything = sb.toString();
+        } finally {
+            br.close();
+}       */
+        
         
         
         try{               
