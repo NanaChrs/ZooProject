@@ -16,10 +16,10 @@ public class Location {
         //attributes
     public Position position; //corresponds to Location Enum
     //protected boolean broken; //0 = false, 1 = true
-    protected ArrayList<Animal> animals = new ArrayList<Animal>();   
-    // constructor
-    public Location(Position p){
-        position= p;
+    protected ArrayList<Animal> animals = new ArrayList<Animal>();
+
+    public Location(Position position) {
+        this.position = position;
     }
     
     public boolean isSomeoneSick(){
