@@ -37,7 +37,7 @@ public class Zebra extends Animal{
             dormir = random.nextBoolean();
         else
             dormir = false;
-        sound = "*bruit de zèbra*";
+        sound = "*zebra noise*";
     }
     
     /**
