@@ -38,7 +38,7 @@ public class Panda extends Animal{
             dormir = random.nextBoolean();
         else
             dormir = false;
-        sound = "*bruit de panda*";
+        sound = "*panda noise*";
     }
        
     /**
