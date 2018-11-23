@@ -42,7 +42,7 @@ public class Elephant extends Animal{
             dormir = random.nextBoolean();
         else
             dormir = false;
-        sound = "*bruit d'éléphant*";
+        sound = "*elephant noise*";
     }
     
     /**
