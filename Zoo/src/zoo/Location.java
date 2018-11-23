@@ -6,6 +6,7 @@
 package zoo;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  *
@@ -74,6 +75,31 @@ public class Location {
         }
     }
     
+    public void setAnimalAttributes(){
+        Random random = new Random();
+        //choose a random animal in the 
+        int whichAnimal = random.nextInt(this.animals.size()); 
+        //because size() gives the number of elements in the ArrayList, but we want to use the indicies
+        //whichAnimal = whichAnimal--;
+        //pick either hungry, thirsty, or sick 
+        int whichAttribute = random.nextInt(4); //because we want values between 1 & 3
+        
+        //switch case: 1 = faim, 2 = soif, 3 = malade
+        switch(whichAttribute){
+            case 1:
+                animals.get(whichAnimal).setFaim(true);
+                //System.out.println(animals.get(whichAnimal).getClass().getSimpleName() + ": " + animals.get(whichAnimal).getName() + " = faim");
+                break;
+            case 2:
+                animals.get(whichAnimal).setSoif(true);
+                //System.out.println(animals.get(whichAnimal).getClass().getSimpleName() + ": " + animals.get(whichAnimal).getName() + " = soif");
+                break;
+            case 3:
+                animals.get(whichAnimal).setMalade(true); 
+                //System.out.println(animals.get(whichAnimal).getClass().getSimpleName() + ": " + animals.get(whichAnimal).getName() + " = malade");
+                break;
+        }
+    }
     /*
     public String[][] getNameAndAttributes(){
         int length=animals.size();

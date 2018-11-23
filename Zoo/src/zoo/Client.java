@@ -386,7 +386,7 @@ public class Client extends People implements Talk, Interactions{
                 }
                    
             }
-            else if(choixBis.equals("X")){
+            else if(choixBis.equals("X") || (this.lieu.position==Position.Exit && choixBis.equals("F"))){
                 //System.out.flush();
                 if(getAge() >= 17)
                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");

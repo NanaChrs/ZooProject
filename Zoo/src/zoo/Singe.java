@@ -28,12 +28,12 @@ public class Singe extends Animal {
     public Singe(String n){
         name = n;
         Random random = new Random();
-        faim = random.nextBoolean();   
+        /*faim = random.nextBoolean();   
         soif = random.nextBoolean();    
-        malade = random.nextBoolean(); 
+        malade = random.nextBoolean(); */
         jouer = random.nextBoolean();
         angry = random.nextBoolean();
-        malade = random.nextBoolean();
+        //malade = random.nextBoolean();
         if(jouer == false && angry == false)
             dormir = random.nextBoolean();
         else

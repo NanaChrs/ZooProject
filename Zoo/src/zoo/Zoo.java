@@ -130,6 +130,19 @@ public class Zoo {
         lieux.get(11).animals=elephants;
         lieux.get(12).animals=aquarium;
         
+        
+        lieux.get(1).setAnimalAttributes();
+        lieux.get(2).setAnimalAttributes();
+        lieux.get(3).setAnimalAttributes();
+        lieux.get(4).setAnimalAttributes();
+        lieux.get(6).setAnimalAttributes();
+        lieux.get(7).setAnimalAttributes();
+        lieux.get(9).setAnimalAttributes();
+        lieux.get(10).setAnimalAttributes();
+        lieux.get(11).setAnimalAttributes();
+        lieux.get(12).setAnimalAttributes();
+
+        
                    
             //Arrivée dans le zoo (à la caisse)
             caissiere.talk("In the first place, what's your name?");
