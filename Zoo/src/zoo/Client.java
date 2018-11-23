@@ -11,7 +11,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 /**
- * Client is a class which inheritate from People directly. It also have parameters in addition like a boolean student to know if the Client is a student or no, an int age to know the age of the Client and his name (a String)
+ * Client is a class which is a direct sub class of People. It also has parameters such as a boolean student to know whether or not the Client is a student, an int age to know the age of the Client, and a String name
  * @author mathi
  */
 public class Client extends People implements Talk, Interactions{
@@ -60,7 +60,7 @@ public class Client extends People implements Talk, Interactions{
     }
 
     /**
-     * getter of the Name atribute
+     * getter of the Name attribute
      * @return 
      */
     public String getName() {
@@ -94,6 +94,7 @@ public class Client extends People implements Talk, Interactions{
      * The introduceSelf method returns a string that depends on the age, the name and the student boolean
      * @return 
      */
+    @Override
     public String introduceSelf(){
         String sentence="Hello! My name is "+this.getName()+". I'm "+this.getAge()+ " years old";
         if (this.student){
@@ -172,10 +173,10 @@ public class Client extends People implements Talk, Interactions{
         talk("Ohh I'm taking a photo of "+toto.getName());
         System.out.println("*cliiiiick*");
         if (toto.getDormir()){
-            this.talk("Mooooh !"+toto.getName()+" is so cute when sleeping *-*");
+            this.talk("Mooooh! "+toto.getName()+" is so cute when sleeping *-*");
         }
         else if(toto.getEnColère()){
-            this.talk("Ouhlala !!!"+toto.getName()+" seems angry... I hope it's not my fault...");
+            this.talk("Ouhlala!!! "+toto.getName()+" seems angry... I hope it's not my fault...");
         }
         else if(toto.getFaim()){
             this.talk("What is the terrible zoo??? "+toto.getName()+" looks famished.");
@@ -200,13 +201,13 @@ public class Client extends People implements Talk, Interactions{
         this.getLieu().info();
         if (null!=this.getLieu().position)switch (this.getLieu().position) {
             case Aquarium:
-                talk("Woooooow !!! The aquarium is so big ! Look at that glass and those fish !!");
+                talk("Woooooow!!! The aquarium is so big! Look at that glass and those fish!!");
                 break;
             case Elephants:
-                talk("Those elephants are so big !! I have never seen elephants so beautiful.");
+                talk("Those elephants are so big!! I have never seen elephants so beautiful.");
                 break;
             case Giraffes:
-                talk("It's so big it looks like it could touch the clouds in the sky !! WOOOOOOOOOOOOOW!");
+                talk("It's so big it looks like it could touch the clouds in the sky!! WOOOOOOOOOOOOOW!");
                 break;
             case Lions:
                 talk("Those lions are so scaryyy... I'm so scared, but I'd like to pet it.");
@@ -221,7 +222,7 @@ public class Client extends People implements Talk, Interactions{
                 talk("Brr I'm so scared of snakes.");
                 break;
             case Monkeys:
-                talk("Haha those monekeys are so funny... But... But what are these two doing over there ?");
+                talk("Haha those monekeys are so funny... But... But what are these two doing over there?");
                 break;
             case Meerkat:
                 talk("Mooooh these little meerkats are so cuuuute!!");
@@ -236,7 +237,7 @@ public class Client extends People implements Talk, Interactions{
                 talk("I need to pee so baaad!!!");
                 break;
             case Exit:
-                talk("Oh noooo is it already the exit ?!");
+                talk("Oh noooo is it already the exit?!");
                 break;
             default:
                 break;
@@ -247,7 +248,7 @@ public class Client extends People implements Talk, Interactions{
     
     
     /**
-     * Void that permits interactions between the age of the client
+     * Void that permits interactions dependant on the age of the client
      */
     @Override
     public void interact(){
@@ -256,12 +257,12 @@ public class Client extends People implements Talk, Interactions{
                 this.talk("Niark Niark I'm going to disturbed those poor "+this.getLieu().animals.get(0).getClass().getSimpleName()+" and throw candies at their faces *evil laugh*");
                 this.getLieu().animals.get(0).talk("");
                 this.getLieu().animals.get(0).setEnColère(true);
-                this.talk("I'm so scared I should never have done that !!");
+                this.talk("I'm so scared!!!!!!!!! I should never have done that!! INSTANT REGRET");
                     }
             else{
                 this.talk("Niark Niark I'm going to disturbed those poor "+this.getLieu().animals.get(0).getClass().getSimpleName()+" and throw candies at their faces *evil laugh*");
                 System.out.println("*poke poke crack*");
-                this.talk("OUCH !!! I forgot I was at the aquarium... It huuuurts !");
+                this.talk("OUCH!!! I forgot I was at the aquarium... It huuuurts!");
             }
                 
         }
@@ -352,7 +353,7 @@ public class Client extends People implements Talk, Interactions{
                                 superVet.talk("I am the super vet what can I do for you?");
                                 this.talk("Please treat it and feed it, this animal is getting me sad");
                                 superVet.interact();
-                                this.talk("Thanks super Vet ! You saved the all planet and the zoo and this animal !");
+                                this.talk("Thanks super Vet! You saved the all planet and the zoo and this animal!");
                                 return true;
                             }
                             else if(interaction2.equals("W")){
@@ -361,9 +362,9 @@ public class Client extends People implements Talk, Interactions{
                                     this.talk("NO MORE ANIMAL ABUSE!");
                                 }
                                 choixBis="X";
-                                this.talk("I'm getting out of this zoo before I break anything !!! ");
+                                this.talk("I'm getting out of this zoo before I break anything!!! ");
                                 if(getAge() >= 10)
-                                    System.out.println("We hope that you enjoy our little game ! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
                                 else
                                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
 
