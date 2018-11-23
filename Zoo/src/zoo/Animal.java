@@ -33,11 +33,11 @@ public abstract class Animal implements Talk {
      */
     protected void setFaim(boolean f){
         faim = f;
-        if(f == true){
+        /*if(f == true){
             System.out.println("L'animal a faim.");
         }else{
             System.out.println("L'animal est mangé.");
-        }   
+        }*/   
     }
     
     /**
@@ -54,11 +54,11 @@ public abstract class Animal implements Talk {
      */
     protected void setSoif(boolean s){
         soif = s;
-        if(s == true){
+        /*if(s == true){
             System.out.println("L'animal a soif.");
         }else{
             System.out.println("L'animal a bu.");
-        }   
+        }*/   
     }
     
     /**
@@ -75,11 +75,11 @@ public abstract class Animal implements Talk {
      */
     protected void setMalade(boolean m){
         malade = m;
-        if(m == true){
+        /*if(m == true){
             System.out.println("L'animal est malade.");
         }else{
             System.out.println("L'animal est en bien santé.");
-        } 
+        }*/ 
     }
     
     /**
@@ -96,11 +96,11 @@ public abstract class Animal implements Talk {
      */
     protected void setDormir(boolean d){
         dormir = d;
-        if(d == true){
+        /*if(d == true){
             System.out.println("L'animal dort.");
         }else{
             System.out.println("L'animal est éveillé.");
-        } 
+        }*/ 
     }
     
     /**
@@ -117,11 +117,11 @@ public abstract class Animal implements Talk {
      */
     protected void setJouer(boolean j){
         jouer = j;
-        if(j == true){
+        /*if(j == true){
             System.out.println("L'animal joue.");
         }else{
             System.out.println("L'animal ne joue pas.");
-        } 
+        }*/ 
     }
      
     /**
@@ -138,11 +138,11 @@ public abstract class Animal implements Talk {
      */
     protected void setEnColère(boolean c){
         angry = c;
-        if(c == true){
+        /*if(c == true){
             System.out.println("L'animal est en colère.");
         }else{
             System.out.println("L'animal est tranquil.");
-        } 
+        }*/ 
     }
     
     /**
@@ -158,7 +158,7 @@ public abstract class Animal implements Talk {
      * @param n the new String that will be set as the animal's name
      */
     protected void setName(String n){
-        System.out.println("Maintenant, il s'appelle " + name + ".");
+        //System.out.println("Maintenant, il s'appelle " + name + ".");
         name = n; 
     }
     
@@ -176,7 +176,7 @@ public abstract class Animal implements Talk {
      */
     protected void setSound(String s){
         sound = s;
-        System.out.println("Maintenant, il dit " + sound + ".");
+        //System.out.println("Maintenant, il dit " + sound + ".");
     }
     
     /**
