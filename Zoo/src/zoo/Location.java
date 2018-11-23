@@ -22,16 +22,7 @@ public class Location {
         this.position = position;
         //this.broken = broken;
     }
-   
-    //default constructor
- /*   public Location(){
-        position = 0;
-        broken = false; 
-    }
-*/    
-
-    
-    
+ 
     public boolean isSomeoneSick(){
         for (Animal animal : animals){
             if (animal.malade){
@@ -52,7 +43,7 @@ public class Location {
     
     public void info(){
         for (Animal animal: animals){
-            System.out.println("Un "+animal.getClass().getSimpleName()+" qui s'appelle "+animal.name+".");
+            System.out.println("One "+animal.getClass().getSimpleName()+" named "+animal.name+".");
             if (animal.faim){
                 animal.talk("*hungry* ");
             }
@@ -100,23 +91,5 @@ public class Location {
                 break;
         }
     }
-    /*
-    public String[][] getNameAndAttributes(){
-        int length=animals.size();
-        String[][] liste = new String[length][7];
-        int i=0;
-        for (Animal animal: animals){
-            liste[i][0]=animal.name;
-            liste[i][1]=String.valueOf(animal.malade);
-            liste[i][2]=String.valueOf(animal.faim);
-            liste[i][3]=String.valueOf(animal.soif);
-            liste[i][4]=String.valueOf(animal.dormir);
-            liste[i][5]=String.valueOf(animal.jouer);
-            liste[i][6]=String.valueOf(animal.encolère);
-        }
-        return liste;
-    }*/
-    
-    
-    
+ 
 }
