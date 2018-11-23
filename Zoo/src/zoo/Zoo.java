@@ -46,20 +46,20 @@ public class Zoo {
         ArrayList<Animal> serpents = new ArrayList<>();
                 
         //Ajouter des animaux à chaque ArrayList
-        Poisson flounder = new Poisson("Flounder");
+        Fish flounder = new Fish("Flounder");
         aquarium.add(flounder);
-        Poisson nemo = new Poisson("Nemo");
+        Fish nemo = new Fish("Nemo");
         aquarium.add(nemo);
         
-        Oiseau tweety = new Oiseau("Tweety");
+        Bird tweety = new Bird("Tweety");
         oiseaux.add(tweety);
-        Oiseau tator = new Oiseau("Tator");
+        Bird tator = new Bird("Tator");
         oiseaux.add(tator);
-        Oiseau tot = new Oiseau("Tot");
+        Bird tot = new Bird("Tot");
         oiseaux.add(tot);
-        Oiseau donald = new Oiseau("Donald");
+        Bird donald = new Bird("Donald");
         oiseaux.add(donald);
-        Oiseau daisy = new Oiseau("Daisy");
+        Bird daisy = new Bird("Daisy");
         oiseaux.add(daisy);
         
         Panda beibei = new Panda("Bei Bei");
@@ -67,9 +67,9 @@ public class Zoo {
         Panda baobao = new Panda("Bao Bao");
         pandas.add(baobao);
 
-        Suricate timon = new Suricate("Timon");
+        Meerkat timon = new Meerkat("Timon");
         suricates.add(timon);
-        Suricate max = new Suricate("Max");
+        Meerkat max = new Meerkat("Max");
         suricates.add(max);
        
         Elephant dumbo = new Elephant("Dumbo");
@@ -77,11 +77,11 @@ public class Zoo {
         Elephant horton = new Elephant("Horton");
         elephants.add(horton);
         
-        Singe rafiki = new Singe("Rafiki");
+        Monkey rafiki = new Monkey("Rafiki");
         singes.add(rafiki);
-        Singe abu = new Singe("Abu");
+        Monkey abu = new Monkey("Abu");
         singes.add(abu);
-        Singe george = new Singe("Curious George");
+        Monkey george = new Monkey("Curious George");
         singes.add(george);
         
         Zebra marty = new Zebra("Stripes");
@@ -89,9 +89,9 @@ public class Zoo {
         Zebra stripes = new Zebra("Marty");
         zebras.add(stripes);
         
-        Girafe gigi = new Girafe("Gigi");
+        Giraffe gigi = new Giraffe("Gigi");
         girafes.add(gigi);
-        Girafe joe = new Girafe("Joe");
+        Giraffe joe = new Giraffe("Joe");
         girafes.add(joe);
         
         Lion simba = new Lion("Simba");
@@ -105,9 +105,9 @@ public class Zoo {
         Lion kiara = new Lion("Kiara");
         lions.add(kiara);
         
-        Serpent nagini = new Serpent("Nagini");
+        Snake nagini = new Snake("Nagini");
         serpents.add(nagini);
-        Serpent basilisk = new Serpent("Basilisk de Serpentard");
+        Snake basilisk = new Snake("Basilisk de Serpentard");
         serpents.add(basilisk);
         
         //Initialisation des personnes
@@ -152,7 +152,7 @@ public class Zoo {
             while (loopTry){
                 try{
                     loopTry=false;
-                    caissiere.talk("Deuxièmement, quel âge avez-vous ?");
+                    caissiere.talk("Secondly, how old are you?");
                     age=keyboard.nextInt();
                 }
                 catch(InputMismatchException e){
@@ -169,21 +169,21 @@ public class Zoo {
             loopTry=true;
             String student="";
             keyboard.nextLine();
-            caissiere.talk("Finally, are you a student ? Enter yes if you are and no if you're not");
+            caissiere.talk("Finally, are you a student? Enter yes if you are and no if you're not");
             while (loopTry){
                 student=keyboard.nextLine();
                 if (student.toUpperCase().equals("YES") || student.toUpperCase().equals("NO")){
                     loopTry=false;
                 }
                 else{
-                    caissiere.talk("Please answer to this question by yes or no.");
+                    caissiere.talk("Please answer to this question with 'yes' or 'no'");
                 }
             }
             
             //keyboard.nextLine();
             joueur=new Client(isBoolean(student), age, line, lieux.get(1));
             caissiere.talk("Thanks for the information! You owe: "+caissiere.prix(joueur)+" €.");
-            joueur.talk("Here you go !");
+            joueur.talk("Here you go!");
             caissiere.talk("We hope you have a great time at the zoo toay! Have fun!");
             
             //Jeu
