@@ -156,7 +156,9 @@ public class Client extends People implements Talk, Interactions{
         
         int nimal=-1;
         while (nimal<0 || nimal>this.getLieu().animals.size()-1){
+            //System.out.println(this.lieu.animals.size());
             try{
+                System.out.println("Please enter a number between 0 and "+(this.lieu.animals.size()-1));
                 Scanner keyboard = new Scanner(System.in);
                 nimal=keyboard.nextInt();
             }
@@ -166,7 +168,6 @@ public class Client extends People implements Talk, Interactions{
             catch (Exception e){
                 System.out.println("An error occured. Please try again.");
             }
-            
         }
        
         Animal toto=this.getLieu().animals.get(nimal);
