@@ -352,7 +352,7 @@ public class Client extends People implements Talk, Interactions{
                         }
                         else if (this.getLieu().isSomeoneHungryOrThirsty() || this.getLieu().isSomeoneSick()){
                             if (interaction2.equals("V")){
-                                this.talk("An animal is not well treated I need to find a vet so he or she can treat him");
+                                this.talk("An animal is not treated well I need to find a vet so he or she can treat him");
                                 superVet.move(this.getLieu());
                                 System.out.println("A wild vet appears");
                                 superVet.talk("I am the super vet what can I do for you?");
