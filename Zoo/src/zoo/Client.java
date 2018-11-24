@@ -223,7 +223,7 @@ public class Client extends People implements Talk, Interactions{
                 talk("Brr I'm so scared of snakes.");
                 break;
             case Monkeys:
-                talk("Haha those monekeys are so funny... But... But what are these two doing over there?");
+                talk("Haha those monekeys are so funny... But...But what are these two doing over there?");
                 break;
             case Meerkat:
                 talk("Mooooh these little meerkats are so cuuuute!!");
@@ -271,7 +271,7 @@ public class Client extends People implements Talk, Interactions{
     
     /**
      * Void that permits to print the choices you can get (the menu in fact). You need to enter the character between two parentheses for it to work (if you write another character it will just write the menu back).
-     * It returns a boolean : if you exite the game it'll be false otherwise it'll be true.
+     * It returns a boolean : if you exit the game it'll be false otherwise it'll be true.
      * This function calls every other methods in the zoo project. It's the main function
      * @param choix
      * @param lieu
@@ -283,7 +283,7 @@ public class Client extends People implements Talk, Interactions{
             
             //System.out.println(choixBis);
             if (choixBis.equals("") || choixBis.equals("C") || choixBis.equals("M")){
-                System.out.println("You're at the "+this.getLieu().position+". What do you want to do now, "+this.name+" ?");
+                System.out.println("You're at the "+this.getLieu().position+". What do you want to do now, "+this.name+"?");
                 System.out.println("- Move (F)orward");
                 System.out.println("- Move (B)ackward");
                 System.out.println("- (I)nteract with your current location");
@@ -341,9 +341,9 @@ public class Client extends People implements Talk, Interactions{
                         }
                         else if (interaction2.equals("X")){
                                 if(getAge() >= 17)
-                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hidden for you so don't hesitate to try with another player");
                                 else
-                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hidden for you so don't hesitate to try with another player");
                             return false;
                         }
                         else if (this.getLieu().isSomeoneHungryOrThirsty() || this.getLieu().isSomeoneSick()){
@@ -354,7 +354,7 @@ public class Client extends People implements Talk, Interactions{
                                 superVet.talk("I am the super vet what can I do for you?");
                                 this.talk("Please treat it and feed it, this animal is getting me sad");
                                 superVet.interact();
-                                this.talk("Thanks super Vet! You saved the all planet and the zoo and this animal!");
+                                this.talk("Thanks super Vet! You saved all the planet and the zoo and this animal!");
                                 return true;
                             }
                             else if(interaction2.equals("W")){
@@ -363,11 +363,11 @@ public class Client extends People implements Talk, Interactions{
                                     this.talk("NO MORE ANIMAL ABUSE!");
                                 }
                                 choixBis="X";
-                                this.talk("I'm getting out of this zoo before I break anything!!! ");
+                                this.talk("I'm getting out of this zoo before I break anything!!!");
                                 if(getAge() >= 10)
-                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hidden for you so don't hesitate to try with another player");
                                 else
-                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hidden for you so don't hesitate to try with another player");
 
                                 return false;
                             }
@@ -391,9 +391,9 @@ public class Client extends People implements Talk, Interactions{
             else if(choixBis.equals("X") || (this.lieu.position==Position.Exit && choixBis.equals("F"))){
                 //System.out.flush();
                 if(getAge() >= 17)
-                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hidden for you so don't hesitate to try with another player");
                 else
-                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hidden for you so don't hesitate to try with another player");
                 return false;
             }
             else{
