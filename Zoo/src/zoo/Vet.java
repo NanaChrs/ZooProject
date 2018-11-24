@@ -20,7 +20,7 @@ public class Vet extends Employee implements Interactions{
      * @return 
      */
     public String introduceSelf(){
-        return "Somebody called... a vet ?";
+        return "Somebody called... a vet?";
     }
     
     /**
@@ -31,8 +31,7 @@ public class Vet extends Employee implements Interactions{
         for (Animal animal: this.lieu.animals){
             if (animal.malade){
                 animal.malade=false;
-                this.talk("I cured "+animal.name+". It was in a bad state.");
-                
+                this.talk("I cured "+animal.name+". It was in a bad state.");  
             }
             if (animal.faim){
                 animal.faim=false;
@@ -40,10 +39,10 @@ public class Vet extends Employee implements Interactions{
             }
             if (animal.soif){
                 animal.soif=false;
-                this.talk("I have given "+animal.name+" a drink. Wow ! Such a thirsty animal.");
+                this.talk("I have given "+animal.name+" a drink. Wow! Such a thirsty animal.");
             }
         }
-        this.talk("Once again the super Vet did its job ! Call me when you need me... I'll be... around...");
+        this.talk("Once again the super Vet did its job! Call me when you need me... I'll be... around...");
         
     }
     
