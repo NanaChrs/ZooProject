@@ -17,7 +17,7 @@ public class Cashier extends Employee{
     }
     
     /**
-     * The methode introduceSelf permits to return a String for the person to introduce itself and asking the player its infos
+     * The method introduceSelf permits to return a String for the person to introduce itself and asking the player its info
      * @return 
      */
     public String introduceSelf(){
@@ -25,7 +25,7 @@ public class Cashier extends Employee{
     }
 
     /**
-     * Gets the infos from the player and return a price for the ticket
+     * Gets the info from the player and return a price for the ticket
      * @param client
      * @return 
      */
