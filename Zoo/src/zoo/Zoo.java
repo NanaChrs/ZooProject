@@ -107,7 +107,7 @@ public class Zoo {
         
         Snake nagini = new Snake("Nagini");
         serpents.add(nagini);
-        Snake basilisk = new Snake("Basilisk de Serpentard");
+        Snake basilisk = new Snake("Basilisk of Slytherin");
         serpents.add(basilisk);
         
         //Initialisation des personnes
