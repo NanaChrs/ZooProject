@@ -154,6 +154,10 @@ public class Zoo {
                     loopTry=false;
                     caissiere.talk("Secondly, how old are you?");
                     age=keyboard.nextInt();
+                    if(age < 0){
+                        System.out.println("Cashier: You may be young, but you can't be THAT young.");
+                        loopTry=true;
+                    }
                 }
                 catch(InputMismatchException e){
                     caissiere.talk("You didn't enter an integer. Please try again.");
