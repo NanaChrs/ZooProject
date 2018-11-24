@@ -23,7 +23,11 @@ public class Client extends People implements Talk, Interactions{
         super(pos);
         this.name=name;
         this.student = student;
-        this.age = age;
+        if(age < 0){
+            this.age = 0;
+        }else{
+            this.age = age;
+        }
         this.talk(introduceSelf());
     }
 
