@@ -205,7 +205,7 @@ public class Zoo {
         
     
     /**
-     * function that test an int and if the int is equal to 1 return true otherwise return false
+     * function that tests an int and if the int is equal to 1 return true otherwise return false
      * @param bool
      * @return bool
      */
