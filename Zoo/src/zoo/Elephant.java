@@ -72,6 +72,6 @@ public class Elephant extends Animal{
      */
     @Override
     public String toString(){
-        return "Type d'animal = Éléphant. Nom = " + getName() + ". Sound = " + getSound() + ". Faim = " + getFaim() + ". Soif = " + getSoif() + ". Malade = " + getMalade() + ". Dormir = " + getDormir() + ". Jouer = " + getJouer() + ". En Colère = " + getEnColère() + ".";
+        return "Type of animal = "+this.getClass().getSimpleName()+" Name = " + getName() + ". Sound = " + getSound() + ". Hungry = " + getFaim() + ". Thirsty = " + getSoif() + ". Sick = " + getMalade() + ". Sleeping = " + getDormir() + ". Playing = " + getJouer() + ". Angry = " + getEnColère() + ".";
     }
 }
