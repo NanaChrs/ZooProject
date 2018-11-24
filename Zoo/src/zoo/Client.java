@@ -340,7 +340,7 @@ public class Client extends People implements Talk, Interactions{
                             return true;
                         }
                         else if (interaction2.equals("X")){
-                                if(getAge() >= 17)
+                                if(getAge() >= 18)
                                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hidden for you so don't hesitate to try with another player");
                                 else
                                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hidden for you so don't hesitate to try with another player");
@@ -364,7 +364,7 @@ public class Client extends People implements Talk, Interactions{
                                 }
                                 choixBis="X";
                                 this.talk("I'm getting out of this zoo before I break anything!!!");
-                                if(getAge() >= 10)
+                                if(getAge() >= 18)
                                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hidden for you so don't hesitate to try with another player");
                                 else
                                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hidden for you so don't hesitate to try with another player");
@@ -390,7 +390,7 @@ public class Client extends People implements Talk, Interactions{
             }
             else if(choixBis.equals("X") || (this.lieu.position==Position.Exit && choixBis.equals("F"))){
                 //System.out.flush();
-                if(getAge() >= 17)
+                if(getAge() >= 18)
                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hidden for you so don't hesitate to try with another player");
                 else
                     System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hidden for you so don't hesitate to try with another player");
