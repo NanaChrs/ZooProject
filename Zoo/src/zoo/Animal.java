@@ -10,21 +10,21 @@ package zoo;
  * @author storyd
  */
 public abstract class Animal implements Talk {
-    boolean faim;   
-    boolean soif;    
-    boolean malade;  //vet has a method that can make animal well again
-    boolean dormir;   
-    boolean jouer;
-    boolean angry;
-    String name = "";
-    String sound = "";
+    protected boolean faim;   
+    protected boolean soif;    
+    protected boolean malade;  //vet has a method that can make animal well again
+    protected boolean dormir;   
+    protected boolean jouer;
+    protected boolean angry;
+    protected String name = "";
+    protected String sound = "";
     
     /**
      * This method allows a user to get the animal's faim attribute
      * @return faim
      */
     protected boolean getFaim(){
-        return faim;
+        return new Boolean(faim);
     }
     
     /**
@@ -45,7 +45,7 @@ public abstract class Animal implements Talk {
      * @return soif
      */
     protected boolean getSoif(){
-        return soif;
+        return new Boolean(soif);
     }
     
     /**
@@ -66,7 +66,7 @@ public abstract class Animal implements Talk {
      * @return malade
      */
     protected boolean getMalade(){
-        return malade;
+        return new Boolean(malade);
     }
     
     /**
@@ -108,7 +108,7 @@ public abstract class Animal implements Talk {
      * @return jouer
      */
     protected boolean getJouer(){
-        return jouer;
+        return new Boolean(jouer);
     }
     
     /**
@@ -129,7 +129,7 @@ public abstract class Animal implements Talk {
      * @return encolère
      */
     protected boolean getEnColère(){
-        return angry;
+        return new Boolean(angry);
     }
     
     /**
@@ -150,7 +150,7 @@ public abstract class Animal implements Talk {
      * @return name
      */
     protected String getName(){
-        return name;
+        return new String(name);
     }
     
     /**
@@ -167,7 +167,7 @@ public abstract class Animal implements Talk {
      * @return sound
      */
     protected String getSound(){
-        return sound;
+        return new String(sound);
     }
     
     /**

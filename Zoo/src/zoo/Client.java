@@ -14,10 +14,10 @@ import java.util.Set;
  * Client is a class which is a direct sub class of People. It also has parameters such as a boolean student to know whether or not the Client is a student, an int age to know the age of the Client, and a String name
  * @author mathi
  */
-public class Client extends People implements Talk, Interactions{
-    boolean student;
+public class Client extends People implements Interactions{
+    protected boolean student;
     private int age;
-    String name;
+    private String name;
 
     public Client(boolean student, int age, String name, Location pos) {
         super(pos);
@@ -32,7 +32,7 @@ public class Client extends People implements Talk, Interactions{
      * @return 
      */
     public boolean getStudent() {
-        return student;
+        return new Boolean(student);
     }
 
     /**
@@ -48,7 +48,7 @@ public class Client extends People implements Talk, Interactions{
      * @return 
      */
     public int getAge() {
-        return age;
+        return new Integer(age);
     }
 
     /**
@@ -64,7 +64,7 @@ public class Client extends People implements Talk, Interactions{
      * @return 
      */
     public String getName() {
-        return name;
+        return new String(name);
     }
 
     /**
@@ -116,7 +116,7 @@ public class Client extends People implements Talk, Interactions{
     }
     
     /**
-     * Void that permits to say which amount of money the client has to pay
+     * Void that permits to say which amount of money the client has to pay. Finally not used.
      * @param Montant 
      */
     public void payer(int Montant){
@@ -198,8 +198,16 @@ public class Client extends People implements Talk, Interactions{
      * Void that outputs the info of all the animals (who is who and how is it) and output different things depending on where the client is at
      */
     public void observer(){
-        System.out.println("In the "+this.getLieu().position+" exhibit, there are:");
-        this.getLieu().info();
+        if(this.lieu.position == Position.Restaurant || this.lieu.position == Position.Toilets){
+            System.out.println("In the " +this.lieu.position+ " you won't find any animals -- unless some have escaped! ");
+        }
+        else if(this.lieu.position == Position.Exit){
+            System.out.println("Leaving so soon?");
+        }
+        else{
+            System.out.println("In the "+this.lieu.position+" exhibit, there are:");
+            this.lieu.info();
+        }
         if (null!=this.getLieu().position)switch (this.getLieu().position) {
             case Aquarium:
                 talk("Woooooow!!! The aquarium is so big! Look at that glass and those fish!!");
@@ -347,33 +355,32 @@ public class Client extends People implements Talk, Interactions{
                             return false;
                         }
                         else if (this.getLieu().isSomeoneHungryOrThirsty() || this.getLieu().isSomeoneSick()){
-                            if (interaction2.equals("V")){
-                                this.talk("An animal is not well treated I need to find a vet so he or she can treat him");
-                                superVet.move(this.getLieu());
-                                System.out.println("A wild vet appears");
-                                superVet.talk("I am the super vet what can I do for you?");
-                                this.talk("Please treat it and feed it, this animal is getting me sad");
-                                superVet.interact();
-                                this.talk("Thanks super Vet! You saved the all planet and the zoo and this animal!");
-                                return true;
-                            }
-                            else if(interaction2.equals("W")){
-                                this.talk("I'm calling WWF we need to shut down this zoo!!!");
-                                for (int i=0; i<5;i++){
-                                    this.talk("NO MORE ANIMAL ABUSE!");
-                                }
-                                choixBis="X";
-                                this.talk("I'm getting out of this zoo before I break anything!!! ");
-                                if(getAge() >= 10)
-                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
-                                else
-                                    System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
-
-                                return false;
-                            }
-                            else{
-                                System.out.println("Invalid action. Try something else.");
-                                return true;
+                            switch (interaction2) {
+                                case "V":
+                                    this.talk("An animal is not well treated I need to find a vet so he or she can treat him");
+                                    superVet.move(this.getLieu());
+                                    System.out.println("A wild vet appears");
+                                    superVet.talk("I am the super vet what can I do for you?");
+                                    this.talk("Please treat it and feed it, this animal is getting me sad");
+                                    superVet.interact();
+                                    this.talk("Thanks super Vet! You saved the all planet and the zoo and this animal!");
+                                    return true;
+                                case "W":
+                                    this.talk("I'm calling WWF we need to shut down this zoo!!!");
+                                    for (int i=0; i<5;i++){
+                                        this.talk("NO MORE ANIMAL ABUSE!");
+                                    }
+                                    choixBis="X";
+                                    this.talk("I'm getting out of this zoo before I break anything!!! ");
+                                    if(getAge() >= 10)
+                                        System.out.println("We hope that you enjoy our little game! If you enjoyed it as an adult, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    else
+                                        System.out.println("We hope that you enjoy our little game! If you enjoyed it as a kid, some functionalities might have been hiden for you so don't hesitate to try with another player");
+                                    
+                                    return false;
+                                default:
+                                    System.out.println("Invalid action. Try something else.");
+                                    return true;
                             }
                         }
                         else {

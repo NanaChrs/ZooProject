@@ -14,7 +14,7 @@ import java.util.Random;
  */
 public class Location {
         //attributes
-    public Position position; //corresponds to Location Enum
+    protected Position position; //corresponds to Location Enum
     //protected boolean broken; //0 = false, 1 = true
     protected ArrayList<Animal> animals = new ArrayList<Animal>();
 
