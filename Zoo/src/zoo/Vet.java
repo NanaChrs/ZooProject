@@ -36,6 +36,7 @@ public class Vet extends Employee implements Interactions{
             if (animal.faim){
                 animal.faim=false;
                 this.talk("I have fed "+animal.name+". Pfew it only had skin on its bones.");
+                animal.eat();
             }
             if (animal.soif){
                 animal.soif=false;
